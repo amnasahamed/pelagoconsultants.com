@@ -1,0 +1,387 @@
+/* Services Page Styles */
+.hero {
+    padding: 160px 0 100px;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(67, 97, 238, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(67, 97, 238, 0.08) 0%, transparent 40%),
+        linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+    text-align: center;
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.heroContent {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.heroContent h1 {
+    margin: var(--space-6) 0 var(--space-6);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.heroContent p {
+    font-size: var(--text-xl);
+    color: var(--gray-600);
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Filter Section */
+.filterSection {
+    padding: var(--space-6) 0;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gray-100);
+    position: sticky;
+    top: 70px;
+    z-index: 100;
+}
+
+.searchBox {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-6);
+    background: var(--white);
+    border-radius: var(--radius-2xl);
+    margin-bottom: var(--space-6);
+    border: 1px solid var(--gray-200);
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-sm);
+}
+
+.searchBox:focus-within {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.1);
+}
+
+.searchBox svg {
+    color: var(--blue);
+    flex-shrink: 0;
+}
+
+.searchBox input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: var(--text-base);
+    color: var(--navy);
+    outline: none;
+    font-weight: 500;
+}
+
+.categoryTabs {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.categoryTab {
+    padding: var(--space-2) var(--space-6);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--gray-600);
+    background: var(--white);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-base);
+    border: 1px solid var(--gray-200);
+}
+
+.categoryTab:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+}
+
+.categoryTab.active {
+    background: var(--navy);
+    color: var(--white);
+    border-color: var(--navy);
+    box-shadow: var(--shadow-md);
+}
+
+/* Services Section */
+.servicesSection {
+    background: var(--white);
+    padding-top: var(--space-12);
+}
+
+.categorySection {
+    margin-bottom: var(--space-20);
+    padding: var(--space-12) var(--space-10);
+    border-radius: var(--radius-3xl);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform var(--transition-base);
+}
+
+.categorySection.blue {
+    --category-color: var(--blue);
+    --category-bg: rgba(67, 97, 238, 0.03);
+}
+
+.categorySection.green {
+    --category-color: var(--success);
+    --category-bg: rgba(16, 185, 129, 0.03);
+}
+
+.categorySection.navy {
+    --category-color: var(--navy);
+    --category-bg: rgba(26, 43, 76, 0.03);
+}
+
+.categorySection.amber {
+    --category-color: var(--warning);
+    --category-bg: rgba(245, 158, 11, 0.03);
+}
+
+.categorySection {
+    background: var(--category-bg);
+}
+
+.categoryHeader {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    margin-bottom: var(--space-12);
+    padding-bottom: var(--space-8);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.categoryIcon {
+    width: 80px;
+    height: 80px;
+    background: var(--white);
+    color: var(--category-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.categoryIcon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.categoryTitleGroup {
+    flex: 1;
+}
+
+.categoryHeader h2 {
+    font-size: var(--text-4xl);
+    font-weight: 800;
+    color: var(--navy);
+    margin: 0 0 6px 0;
+    letter-spacing: -0.02em;
+}
+
+.serviceCount {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--category-color);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+}
+
+.serviceCard {
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 240px;
+    background: var(--white);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: var(--radius-2xl);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.cardHighlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: var(--category-color);
+    opacity: 0.2;
+    transition: all var(--transition-base);
+}
+
+.serviceCard:hover .cardHighlight {
+    width: 100%;
+    opacity: 0.05;
+}
+
+.serviceCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border-color: var(--category-color);
+}
+
+.serviceCard h3 {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: var(--space-3);
+    line-height: 1.3;
+}
+
+.serviceCard p {
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin-bottom: var(--space-6);
+    flex-grow: 1;
+}
+
+.enquireBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--category-color);
+    text-decoration: none;
+    transition: all var(--transition-base);
+}
+
+.enquireBtn svg {
+    transition: transform var(--transition-base);
+}
+
+.serviceCard:hover .enquireBtn {
+    color: var(--navy);
+}
+
+.serviceCard:hover .enquireBtn svg {
+    transform: translateX(4px);
+}
+
+/* CTA */
+.cta {
+    background: var(--navy);
+    padding: var(--space-24) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: var(--blue);
+    filter: blur(150px);
+    opacity: 0.1;
+    border-radius: 50%;
+}
+
+.ctaContent {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: var(--white);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.ctaContent h2 {
+    color: var(--white);
+    margin-bottom: var(--space-6);
+    font-size: var(--text-4xl);
+    font-weight: 800;
+}
+
+.ctaContent p {
+    opacity: 0.8;
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-10);
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .servicesGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 140px 0 60px;
+    }
+
+    .heroContent h1 {
+        font-size: var(--text-4xl);
+    }
+
+    .filterSection {
+        top: 60px;
+        padding: var(--space-4) 0;
+    }
+
+    .searchBox {
+        padding: var(--space-3) var(--space-4);
+    }
+
+    .categoryTabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: var(--space-2);
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start;
+    }
+
+    .categoryTab {
+        white-space: nowrap;
+    }
+
+    .servicesGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .categorySection {
+        padding: var(--space-8) var(--space-6);
+        margin-bottom: var(--space-12);
+        border-radius: var(--radius-2xl);
+    }
+
+    .categoryIcon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .categoryIcon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .categoryHeader {
+        gap: var(--space-4);
+        padding-bottom: var(--space-4);
+        margin-bottom: var(--space-8);
+    }
+
+    .categoryHeader h2 {
+        font-size: var(--text-2xl);
+    }
+}

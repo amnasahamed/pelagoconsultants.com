@@ -1,0 +1,177 @@
+.footer {
+    background: var(--gray-50);
+    border-top: 1px solid var(--gray-200);
+    padding: var(--space-16) 0 var(--space-8);
+    position: relative;
+}
+
+.footerContent {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+}
+
+.footerMain {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    gap: var(--space-12);
+}
+
+.footerBrand {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+}
+
+.tagline {
+    color: var(--gray-600);
+    font-size: var(--text-base);
+    line-height: 1.6;
+    max-width: 280px;
+    margin-bottom: 0;
+}
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+.footerLinks {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-8);
+}
+
+.linkColumn h4 {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-4);
+}
+
+.linkColumn ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.linkColumn li {
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+}
+
+.linkColumn a {
+    color: var(--gray-600);
+    transition: color var(--transition-fast);
+}
+
+.linkColumn a:hover {
+    color: var(--blue);
+}
+
+.footerBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--gray-200);
+}
+
+.footerBottom p {
+    color: var(--gray-500);
+    font-size: var(--text-sm);
+    margin-bottom: 0;
+}
+
+.socialLinks {
+    display: flex;
+    gap: var(--space-4);
+}
+
+.socialLinks a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    background: var(--white);
+    color: var(--gray-600);
+    transition: all var(--transition-fast);
+    border: 1px solid var(--gray-200);
+}
+
+.socialLinks a:hover {
+    background: var(--blue);
+    color: var(--white);
+    border-color: var(--blue);
+    transform: translateY(-2px);
+}
+
+/* WhatsApp Button */
+.whatsappBtn {
+    position: fixed;
+    bottom: var(--space-6);
+    right: var(--space-6);
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: var(--white);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-base);
+    z-index: 999;
+}
+
+.whatsappBtn:hover {
+    background: #128C7E;
+    transform: scale(1.1);
+    color: var(--white);
+}
+
+/* Mobile Styles */
+@media (max-width: 1024px) {
+    .footerMain {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+
+    .footerLinks {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .footer {
+        padding: var(--space-12) 0 var(--space-6);
+    }
+
+    .footerLinks {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+
+    .footerBottom {
+        flex-direction: column;
+        gap: var(--space-4);
+        text-align: center;
+    }
+
+    .whatsappBtn {
+        bottom: var(--space-4);
+        right: var(--space-4);
+        width: 48px;
+        height: 48px;
+    }
+}

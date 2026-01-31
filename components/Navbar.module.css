@@ -1,0 +1,145 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: var(--space-4) 0;
+    transition: all var(--transition-base);
+    background: transparent;
+}
+
+.header.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-md);
+    padding: var(--space-3) 0;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    z-index: 1001;
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+}
+
+.navLink {
+    font-size: var(--text-base);
+    font-weight: 500;
+    color: var(--navy);
+    position: relative;
+    padding: var(--space-2) 0;
+}
+
+.navLink::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--blue);
+    transition: width var(--transition-base);
+}
+
+.navLink:hover {
+    color: var(--blue);
+}
+
+.navLink:hover::after {
+    width: 100%;
+}
+
+.ctaButton {
+    margin-left: var(--space-4);
+}
+
+.mobileCtaItem {
+    display: none;
+}
+
+.mobileMenuBtn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: var(--space-2);
+    z-index: 1001;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.mobileMenuBtn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--navy);
+    transition: all var(--transition-base);
+    border-radius: 2px;
+}
+
+.mobileMenuBtn.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobileMenuBtn.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobileMenuBtn.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Styles */
+@media (max-width: 900px) {
+    .navLinks {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--white);
+        flex-direction: column;
+        justify-content: center;
+        gap: var(--space-6);
+        transition: right var(--transition-base);
+        padding: var(--space-8);
+    }
+
+    .navLinks.open {
+        right: 0;
+    }
+
+    .navLink {
+        font-size: var(--text-xl);
+    }
+
+    .ctaButton {
+        display: none;
+    }
+
+    .mobileCtaItem {
+        display: block;
+        margin-top: var(--space-4);
+    }
+
+    .mobileMenuBtn {
+        display: flex;
+    }
+}

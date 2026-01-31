@@ -1,0 +1,417 @@
+/* About Page Styles */
+
+.hero {
+    padding: 180px 0 80px;
+    background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+    text-align: center;
+}
+
+.heroContent {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.heroContent h1 {
+    margin: var(--space-4) 0 var(--space-6);
+}
+
+.highlight {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.heroContent p {
+    font-size: var(--text-xl);
+    color: var(--gray-600);
+    margin-bottom: 0;
+}
+
+/* Story Section */
+.storySection {
+    background: var(--white);
+}
+
+.storyGrid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-12);
+    align-items: center;
+}
+
+.storyContent h2 {
+    margin-bottom: var(--space-6);
+}
+
+.storyContent p {
+    color: var(--gray-600);
+    font-size: var(--text-lg);
+    line-height: 1.8;
+}
+
+.storyImage {
+    display: flex;
+    justify-content: center;
+}
+
+.imagePlaceholder {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 4/3;
+    background: var(--gray-100);
+    border-radius: var(--radius-2xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mission Section */
+.missionGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+}
+
+.missionCard {
+    background: var(--white);
+    padding: var(--space-8);
+    border-radius: var(--radius-xl);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.missionIcon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: var(--space-4);
+}
+
+.missionCard h3 {
+    margin-bottom: var(--space-3);
+}
+
+.missionCard p {
+    color: var(--gray-600);
+    margin-bottom: 0;
+}
+
+/* Team Section */
+.teamGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-6);
+    margin-top: var(--space-12);
+}
+
+.staffHeader {
+    margin-top: var(--space-20);
+    text-align: center;
+}
+
+.staffHeader h3 {
+    font-size: var(--text-3xl);
+    margin-top: var(--space-2);
+}
+
+.staffGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-8);
+    margin-top: var(--space-12);
+}
+
+.teamCard {
+    text-align: center;
+    transition: transform var(--transition-base);
+}
+
+.teamCard:hover {
+    transform: translateY(-8px);
+}
+
+.teamImageContainer {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3/4;
+    margin-bottom: var(--space-6);
+    overflow: hidden;
+    border-radius: var(--radius-2xl);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.teamImageBg {
+    position: absolute;
+    bottom: -20%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    background: var(--accent);
+    filter: blur(40px);
+    opacity: 0.15;
+    border-radius: 50%;
+    transition: all var(--transition-base);
+    z-index: 1;
+}
+
+.teamCard:hover .teamImageBg {
+    opacity: 0.3;
+    transform: scale(1.2);
+}
+
+.teamImg {
+    position: relative;
+    z-index: 2;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    transition: transform var(--transition-base);
+}
+
+.teamCard:hover .teamImg {
+    transform: scale(1.05);
+}
+
+.teamInfo h3 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-1);
+}
+
+.teamInfo p {
+    font-size: var(--text-sm);
+    color: var(--gray-500);
+    margin-bottom: 0;
+}
+
+/* Values Section */
+.valuesGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+}
+
+.valueCard {
+    text-align: center;
+    padding: var(--space-6);
+    background: var(--gray-50);
+    border-radius: var(--radius-xl);
+    transition: all var(--transition-base);
+}
+
+.valueCard:hover {
+    background: var(--white);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.valueIcon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: var(--space-4);
+}
+
+.valueCard h3 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-2);
+}
+
+.valueCard p {
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+    margin-bottom: 0;
+}
+
+/* Certifications */
+.certGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+}
+
+.certCard {
+    background: var(--white);
+    padding: var(--space-8);
+    border-radius: var(--radius-xl);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.certBadge {
+    width: 60px;
+    height: 60px;
+    background: var(--success);
+    color: var(--white);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-2xl);
+    margin: 0 auto var(--space-4);
+}
+
+.certCard h3 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-2);
+}
+
+.certCard p {
+    font-size: var(--text-sm);
+    color: var(--gray-500);
+    margin-bottom: var(--space-3);
+}
+
+.viewCertLink {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--blue);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.viewCertLink:hover {
+    color: var(--navy);
+    text-decoration: underline;
+}
+
+/* Stats Section */
+.statsSection {
+    background: var(--gradient-primary);
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-8);
+}
+
+.statItem {
+    text-align: center;
+    color: var(--white);
+}
+
+.statNumber {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: var(--text-5xl);
+    font-weight: 700;
+    margin-bottom: var(--space-2);
+}
+
+.statLabel {
+    font-size: var(--text-base);
+    opacity: 0.9;
+}
+
+/* Gallery Section */
+.gallerySection {
+    background: var(--white);
+}
+
+.galleryGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-4);
+}
+
+.galleryItem {
+    aspect-ratio: 4/3;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.galleryItem:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-xl);
+}
+
+.galleryItem:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.galleryItem:nth-child(5) {
+    grid-column: span 2;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .teamGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-6);
+    }
+
+    .staffGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-6);
+    }
+
+    .galleryGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .galleryItem:nth-child(1) {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .galleryItem:nth-child(5) {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 140px 0 60px;
+    }
+
+    .storyGrid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+
+    .missionGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .certGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .valuesGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .teamGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+    }
+
+    .staffGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+    }
+
+    .statsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .statNumber {
+        font-size: var(--text-4xl);
+    }
+
+    .galleryGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .galleryItem:nth-child(1) {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+}
