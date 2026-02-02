@@ -1,6 +1,7 @@
 import styles from './page.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
+import ClientWall from './components/ClientWall';
 
 // SVG Icons
 const icons = {
@@ -277,25 +278,8 @@ export default function Home() {
         <div className={styles.heroBackground}></div>
       </section>
 
-      {/* Client Marquee */}
-      <section className={styles.clientsSection}>
-        <p className={styles.trustedBy}>TRUSTED BY INDUSTRY LEADERS</p>
-        <div className={styles.marqueeWrapper}>
-          <div className={styles.marquee}>
-            {[...clientLogos, ...clientLogos].map((client, idx) => (
-              <div key={idx} className={styles.logoWrapper}>
-                <Image
-                  src={client.src}
-                  alt={client.name}
-                  width={120}
-                  height={60}
-                  className={styles.clientLogo}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Client Wall */}
+      <ClientWall />
 
       {/* Services Section */}
       <section className={`section ${styles.servicesSection}`}>
