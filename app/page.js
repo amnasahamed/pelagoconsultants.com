@@ -279,7 +279,7 @@ export default function Home() {
       </section>
 
       {/* Client Wall */}
-      <ClientWall />
+      <ClientWall isHomePage={true} initialCount={16} showSearch={false} />
 
       {/* Services Section */}
       <section className={`section ${styles.servicesSection}`}>

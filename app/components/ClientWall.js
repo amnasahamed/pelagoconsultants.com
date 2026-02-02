@@ -2,12 +2,18 @@
 
 import { useState, useMemo } from 'react';
 import Image from 'next/image';
+import Link from 'next/link'; // Added Link import
 import styles from './ClientWall.module.css';
 import { allClients } from '../clients/client-data';
 
-export default function ClientWall() {
+export default function ClientWall({
+    initialCount = 24,
+    showSearch = true,
+    showTabs = true,
+    isHomePage = false
+}) {
     const [searchTerm, setSearchTerm] = useState('');
-    const [visibleCount, setVisibleCount] = useState(24);
+    const [visibleCount, setVisibleCount] = useState(initialCount);
     const [activeTab, setActiveTab] = useState('all'); // 'all', 'featured'
 
     // Filter clients
@@ -30,6 +36,7 @@ export default function ClientWall() {
     }, [searchTerm, activeTab]);
 
     const displayedClients = filteredClients.slice(0, visibleCount);
+    // On homepage, we don't load more, we link to the full page if there are more
     const hasMore = visibleCount < filteredClients.length;
 
     const handleLoadMore = () => {
@@ -48,43 +55,47 @@ export default function ClientWall() {
                 </div>
 
                 {/* Search & Filter */}
-                <div className={styles.searchWrapper}>
-                    <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        className={styles.searchIcon}
-                    >
-                        <circle cx="11" cy="11" r="8" />
-                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                    </svg>
-                    <input
-                        type="text"
-                        placeholder="Search for a company..."
-                        className={styles.searchInput}
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                    />
-                </div>
+                {showSearch && (
+                    <div className={styles.searchWrapper}>
+                        <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            className={styles.searchIcon}
+                        >
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        </svg>
+                        <input
+                            type="text"
+                            placeholder="Search for a company..."
+                            className={styles.searchInput}
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                        />
+                    </div>
+                )}
 
                 {/* Tabs */}
-                <div className={styles.tabs}>
-                    <button
-                        className={`${styles.tab} ${activeTab === 'all' ? styles.activeTab : ''}`}
-                        onClick={() => setActiveTab('all')}
-                    >
-                        All Clients
-                    </button>
-                    <button
-                        className={`${styles.tab} ${activeTab === 'featured' ? styles.activeTab : ''}`}
-                        onClick={() => setActiveTab('featured')}
-                    >
-                        Featured with Logos
-                    </button>
-                </div>
+                {showTabs && (
+                    <div className={styles.tabs}>
+                        <button
+                            className={`${styles.tab} ${activeTab === 'all' ? styles.activeTab : ''}`}
+                            onClick={() => setActiveTab('all')}
+                        >
+                            All Clients
+                        </button>
+                        <button
+                            className={`${styles.tab} ${activeTab === 'featured' ? styles.activeTab : ''}`}
+                            onClick={() => setActiveTab('featured')}
+                        >
+                            Featured with Logos
+                        </button>
+                    </div>
+                )}
 
                 {/* Grid */}
                 <div className={styles.grid}>
@@ -115,13 +126,19 @@ export default function ClientWall() {
                     </div>
                 )}
 
-                {hasMore && (
-                    <div className={styles.footer}>
-                        <button onClick={handleLoadMore} className={styles.loadMoreBtn}>
-                            Show More Clients
-                        </button>
-                    </div>
-                )}
+                <div className={styles.footer}>
+                    {isHomePage ? (
+                        <Link href="/clients" className="btn btn-secondary">
+                            View All 100+ Clients
+                        </Link>
+                    ) : (
+                        hasMore && (
+                            <button onClick={handleLoadMore} className={styles.loadMoreBtn}>
+                                Show More Clients
+                            </button>
+                        )
+                    )}
+                </div>
             </div>
         </section>
     );
