@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './careers.module.css';
 
 // SVG Icons
@@ -218,7 +219,7 @@ export default function CareersPage() {
                             Shape the Future of Professional Services
                         </h1>
                         <p className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                            We're looking for architects of business growth—individuals who blend precision with passion to deliver exceptional value.
+                            We&apos;re looking for architects of business growth—individuals who blend precision with passion to deliver exceptional value.
                         </p>
                         <div className="animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                             <a href="#openings" className="btn btn-primary btn-lg">
@@ -259,8 +260,13 @@ export default function CareersPage() {
                         {openings.map((job, idx) => (
                             <div key={idx} className={`${styles.jobCard} animate-fade-in-up`} style={{ animationDelay: `${0.1 * (idx + 1)}s` }}>
                                 {job.poster && (
-                                    <div className={styles.jobCardThumbnail} onClick={() => handleApply(job)}>
-                                        <img src={job.poster} alt={`Hiring poster for ${job.title}`} />
+                                    <div className={styles.jobCardThumbnail} onClick={() => handleApply(job)} style={{ position: 'relative' }}>
+                                        <Image
+                                            src={job.poster}
+                                            alt={`Hiring poster for ${job.title}`}
+                                            fill
+                                            style={{ objectFit: 'cover' }}
+                                        />
                                     </div>
                                 )}
                                 <div className={styles.jobCardInfo}>
@@ -371,7 +377,7 @@ export default function CareersPage() {
 
                             {submitStatus === 'success' && (
                                 <div className={styles.successMessage}>
-                                    {icons.check} Your application has been sent successfully. We'll be in touch soon.
+                                    {icons.check} Your application has been sent successfully. We&apos;ll be in touch soon.
                                 </div>
                             )}
 
@@ -402,16 +408,16 @@ export default function CareersPage() {
             <section className={styles.cta}>
                 <div className="container">
                     <div className={styles.ctaContent}>
-                        <h2>Don't see your perfect fit?</h2>
+                        <h2>Don&apos;t see your perfect fit?</h2>
                         <p>
-                            We are always looking for exceptional talent. If you believe your expertise aligns with our culture of excellence, we'd love to hear from you.
+                            We are always looking for exceptional talent. If you believe your expertise aligns with our culture of excellence, we&apos;d love to hear from you.
                         </p>
                         <div className={styles.ctaButtons}>
                             <button onClick={() => handleApply({ title: 'Visionary Role', department: 'General Inquiry' })} className="btn btn-primary btn-lg">
                                 Send Visionary Resume
                             </button>
                             <a href="tel:+917994659991" className="btn btn-outline btn-lg">
-                                {icons.phone} Let's Talk
+                                {icons.phone} Let&apos;s Talk
                             </a>
                         </div>
                     </div>

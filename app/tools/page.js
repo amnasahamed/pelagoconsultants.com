@@ -434,7 +434,7 @@ export default function ToolsPage() {
                 <div className="container">
                     <div className={styles.heroContent}>
                         <span className="badge badge-blue">Free Business Tools</span>
-                        <h1>Founder's Toolkit</h1>
+                        <h1>Founder&apos;s Toolkit</h1>
                         <p>Essential calculators to help you plan, track, and grow your business with data-driven confidence. All tools are free and built specifically for Indian startups.</p>
 
                         <div className={styles.statsRow}>

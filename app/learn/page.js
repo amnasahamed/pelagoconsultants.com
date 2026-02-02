@@ -15,7 +15,7 @@ export default function LearnPage() {
     // Flatten all lessons for navigation
     const allLessons = useMemo(() => {
         return modules.flatMap(m => m.lessons.map(l => ({ ...l, module: m })));
-    }, [modules]);
+    }, []);
 
     const totalLessons = allLessons.length;
     const progress = Math.round((completedLessons.length / totalLessons) * 100);

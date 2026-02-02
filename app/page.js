@@ -287,7 +287,7 @@ export default function Home() {
           <div className="section-header">
             <p className="subtitle">Our Services</p>
             <h2>Everything you need to run your business.</h2>
-            <p>Don't let bureaucracy slow you down. We offer tailored services to keep your foundation strong.</p>
+            <p>Don&apos;t let bureaucracy slow you down. We offer tailored services to keep your foundation strong.</p>
           </div>
 
           <div className={styles.servicesGrid}>
@@ -383,7 +383,7 @@ export default function Home() {
                     </div>
                     <span className={styles.reviewTime}>{testimonial.time}</span>
                   </div>
-                  <p className={styles.testimonialText}>"{testimonial.text}"</p>
+                  <p className={styles.testimonialText}>&quot;{testimonial.text}&quot;</p>
                   <div className={styles.testimonialAuthor}>
                     <div className={styles.authorAvatar} style={{
                       background: idx % 3 === 0 ? 'var(--blue)' : idx % 3 === 1 ? 'var(--navy)' : 'var(--success)'
@@ -509,7 +509,7 @@ export default function Home() {
         <div className="container">
           <div className={styles.finalCtaContent}>
             <h2>Ready to get started?</h2>
-            <p>Join 6,000+ businesses who trust Pelago. Let's get your compliance sorted today.</p>
+            <p>Join 6,000+ businesses who trust Pelago. Let&apos;s get your compliance sorted today.</p>
             <div className={styles.ctaButtons}>
               <a
                 href="https://api.whatsapp.com/send/?phone=917994659991&text=Hi%2C+I+need+help+with+business+compliance&type=phone_number&app_absent=0"

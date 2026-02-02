@@ -122,7 +122,7 @@ export default function ClientWall({
 
                 {displayedClients.length === 0 && (
                     <div style={{ textAlign: 'center', padding: '2rem', color: '#666' }}>
-                        No companies found matching "{searchTerm}"
+                        No companies found matching &quot;{searchTerm}&quot;
                     </div>
                 )}
 

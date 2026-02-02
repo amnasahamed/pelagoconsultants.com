@@ -30,7 +30,7 @@ export default function ContactPage() {
                 <div className="container">
                     <div className={styles.heroContent}>
                         <span className="badge badge-blue">Contact Us</span>
-                        <h1>Let's discuss your business needs</h1>
+                        <h1>Let&apos;s discuss your business needs</h1>
                         <p>Get in touch with our experts for a free consultation.</p>
                     </div>
                 </div>

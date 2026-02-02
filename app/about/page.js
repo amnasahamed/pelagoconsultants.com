@@ -102,7 +102,7 @@ export default function AboutPage() {
                     <div className={styles.heroContent}>
                         <span className="badge badge-blue">About Us</span>
                         <h1>Building trust through<br /><span className={styles.highlight}>transparent compliance</span></h1>
-                        <p>Since our inception, we've helped 6,000+ businesses navigate the complex world of compliance, registration, and legal requirements.</p>
+                        <p>Since our inception, we&apos;ve helped 6,000+ businesses navigate the complex world of compliance, registration, and legal requirements.</p>
                     </div>
                 </div>
             </section>
@@ -117,10 +117,10 @@ export default function AboutPage() {
                                 Pelago Consultants was founded with a simple mission: to make business compliance accessible and affordable for every entrepreneur in India.
                             </p>
                             <p>
-                                We understand that navigating government regulations, tax filings, and legal requirements can be overwhelming — especially for startups and small businesses. That's why we've built a team of experts who handle the paperwork while you focus on what matters most: growing your business.
+                                We understand that navigating government regulations, tax filings, and legal requirements can be overwhelming — especially for startups and small businesses. That&apos;s why we&apos;ve built a team of experts who handle the paperwork while you focus on what matters most: growing your business.
                             </p>
                             <p>
-                                Today, we're proud to be a Startup India certified consultancy, trusted by businesses across Kerala and beyond.
+                                Today, we&apos;re proud to be a Startup India certified consultancy, trusted by businesses across Kerala and beyond.
                             </p>
                         </div>
                         <div className={styles.storyImage}>
@@ -150,7 +150,7 @@ export default function AboutPage() {
                         <div className={styles.missionCard}>
                             <span className={styles.missionIcon}>{icons.vision}</span>
                             <h3>Our Vision</h3>
-                            <p>To be India's most trusted partner for business compliance, known for transparency, expertise, and exceptional service.</p>
+                            <p>To be India&apos;s most trusted partner for business compliance, known for transparency, expertise, and exceptional service.</p>
                         </div>
                     </div>
                 </div>
