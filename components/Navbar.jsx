@@ -37,6 +37,7 @@ export default function Navbar() {
             width={160}
             height={50}
             priority
+            loading="eager"
           />
         </Link>
 

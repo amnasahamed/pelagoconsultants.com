@@ -35,6 +35,7 @@ export default function Footer() {
                                 alt="Pelago Consultants"
                                 width={160}
                                 height={50}
+                                priority
                             />
                         </Link>
                         <p className={styles.tagline}>

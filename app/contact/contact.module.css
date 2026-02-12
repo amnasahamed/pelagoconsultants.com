@@ -1,83 +1,97 @@
-/* Contact Page - v3 Figma-quality */
+/* Contact Page - Aura v4 */
 
 .hero {
-    padding: 180px 0 80px;
-    background: var(--off-white);
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, var(--aura-soft-rose) 0%, var(--white) 50%, var(--aura-peach) 100%);
     text-align: center;
     position: relative;
+    overflow: hidden;
 }
 
-.hero::after {
+.hero::before {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: var(--gray-100);
+    bottom: -40%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--blue-glow) 0%, transparent 70%);
+    filter: blur(80px);
+    z-index: 0;
 }
 
 .heroContent {
-    max-width: 520px;
+    max-width: 680px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .heroContent h1 {
-    margin: var(--space-5) 0 var(--space-4);
+    margin: var(--space-6) 0 var(--space-4);
+    font-size: clamp(1.875rem, 5vw, 3rem);
     font-weight: 800;
+    color: var(--navy);
+    line-height: 1.12;
     letter-spacing: -0.045em;
 }
 
 .heroContent p {
     font-size: var(--text-base);
-    color: var(--gray-500);
-    margin-bottom: 0;
-    line-height: 1.72;
+    color: var(--gray-600);
+    line-height: 1.8;
+    max-width: 520px;
+    margin: 0 auto;
 }
 
 /* Contact Section */
 .contactSection {
-    background: var(--white);
+    background: transparent;
+    padding: var(--space-20) 0;
 }
 
 .contactGrid {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
-    gap: var(--space-10);
+    gap: var(--space-12);
     align-items: start;
 }
 
 /* Form */
 .formWrapper {
-    background: var(--gray-50);
-    padding: var(--space-9);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: var(--backdrop-blur);
+    padding: var(--space-10);
     border-radius: var(--radius-2xl);
-    border: 1px solid var(--gray-100);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: var(--shadow-aura);
 }
 
 .formWrapper h2 {
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-8);
     font-weight: 800;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.045em;
     font-size: var(--text-2xl);
+    color: var(--navy);
 }
 
 .form {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--space-5);
 }
 
 .formRow {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-4);
+    gap: var(--space-5);
 }
 
 .formGroup {
     display: flex;
     flex-direction: column;
-    gap: var(--space-1-5);
+    gap: var(--space-2);
 }
 
 .formGroup label {
@@ -90,13 +104,13 @@
 .formGroup input,
 .formGroup select,
 .formGroup textarea {
-    padding: 0.6rem var(--space-4);
+    padding: 0.65rem var(--space-4);
     border: 1.5px solid var(--gray-200);
     border-radius: var(--radius-lg);
-    font-size: var(--text-sm);
+    font-size: var(--text-base);
     font-family: var(--font-body);
-    background: var(--white);
-    transition: all var(--transition-fast);
+    background: rgba(255, 255, 255, 0.8);
+    transition: all var(--transition-base);
     color: var(--navy);
 }
 
@@ -104,8 +118,9 @@
 .formGroup select:focus,
 .formGroup textarea:focus {
     outline: none;
-    border-color: var(--navy);
-    box-shadow: 0 0 0 3px rgba(12, 18, 34, 0.04);
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px var(--blue-muted);
+    background: var(--white);
 }
 
 .formGroup input::placeholder,
@@ -124,42 +139,54 @@
 
 .formGroup textarea {
     resize: vertical;
-    min-height: 110px;
+    min-height: 120px;
 }
 
 /* Contact Info */
 .contactInfo {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--space-5);
 }
 
 .infoCard {
-    background: var(--gray-50);
-    padding: var(--space-7);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: var(--backdrop-blur);
+    padding: var(--space-8);
     border-radius: var(--radius-2xl);
-    border: 1px solid var(--gray-100);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: all var(--transition-slow);
+    box-shadow: var(--shadow-aura);
+}
+
+.infoCard:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(59, 91, 219, 0.3);
+    box-shadow: var(--shadow-card-hover);
 }
 
 .infoCard h3 {
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-3);
     font-weight: 700;
     letter-spacing: -0.02em;
+    color: var(--navy);
+    font-size: var(--text-lg);
 }
 
 .infoCard > p {
-    color: var(--gray-500);
+    color: var(--gray-600);
     font-size: var(--text-sm);
-    margin-bottom: var(--space-5);
-    line-height: 1.72;
+    margin-bottom: var(--space-4);
+    line-height: 1.7;
 }
 
 .infoItem {
     display: flex;
     align-items: flex-start;
-    gap: var(--space-3-5);
-    padding: var(--space-3-5) 0;
-    border-bottom: 1px solid var(--gray-100);
+    gap: var(--space-3);
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .infoItem:last-child {
@@ -170,19 +197,24 @@
 .infoIcon {
     width: 40px;
     height: 40px;
-    background: var(--white);
+    background: var(--blue-muted);
     border-radius: var(--radius-lg);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--navy);
+    color: var(--blue);
     flex-shrink: 0;
-    border: 1px solid var(--gray-100);
+    transition: all var(--transition-base);
+}
+
+.infoItem:hover .infoIcon {
+    background: var(--blue);
+    color: var(--white);
 }
 
 .infoItem h4 {
     font-size: var(--text-2xs);
-    color: var(--gray-400);
+    color: var(--gray-500);
     font-weight: 600;
     margin-bottom: 2px;
     text-transform: uppercase;
@@ -197,53 +229,88 @@
     font-weight: 500;
 }
 
-.infoItem a:hover {
+.infoItem a {
     color: var(--blue);
-}
-
-/* WhatsApp Card */
-.whatsappCard {
-    display: flex;
-    align-items: center;
-    gap: var(--space-4);
-    padding: var(--space-5);
-    background: var(--navy);
-    color: var(--white);
-    border-radius: var(--radius-xl);
+    text-decoration: none;
     transition: all var(--transition-base);
 }
 
-.whatsappCard:hover {
-    background: var(--navy-light);
-    transform: translateY(-2px);
-    color: var(--white);
-    box-shadow: var(--shadow-lg);
+.infoItem a:hover {
+    color: var(--blue-lighter);
+    text-decoration: underline;
 }
 
-.whatsappCard h4 {
-    color: var(--white);
-    margin-bottom: 1px;
-    font-size: var(--text-sm);
+/* Offices */
+.officesSection {
+    padding: var(--space-20) 0;
+    background: linear-gradient(135deg, var(--blue-muted) 0%, transparent 100%);
+}
+
+.officesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+}
+
+.officeCard {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: var(--backdrop-blur);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-8);
+    text-align: center;
+    transition: all var(--transition-slow);
+    box-shadow: var(--shadow-aura);
+}
+
+.officeCard:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(59, 91, 219, 0.3);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.officeCard h4 {
+    font-size: var(--text-xl);
     font-weight: 700;
-    letter-spacing: -0.01em;
+    color: var(--navy);
+    margin-bottom: var(--space-4);
 }
 
-.whatsappCard p {
-    opacity: 0.5;
-    font-size: var(--text-2xs);
-    margin-bottom: 0;
+.officeCard p {
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+    margin: 0;
+    line-height: 1.7;
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
     .contactGrid {
         grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+
+    .officesGrid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
 }
 
 @media (max-width: 768px) {
     .hero {
-        padding: 140px 0 60px;
+        padding: 80px 0 60px;
+    }
+
+    .heroContent h1 {
+        font-size: var(--text-4xl);
+    }
+
+    .heroContent p {
+        font-size: var(--text-base);
+    }
+
+    .contactSection {
+        padding: var(--space-16) 0;
     }
 
     .formWrapper {
@@ -253,4 +320,19 @@
     .formRow {
         grid-template-columns: 1fr;
     }
+
+    .officesSection {
+        padding: var(--space-16) 0;
+    }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -150,7 +150,7 @@ export default function ServicesPage() {
             <section className={styles.hero}>
                 <div className="container">
                     <div className={styles.heroContent}>
-                        <span className="badge badge-blue">Complete Service Catalog</span>
+                        <span className={`${styles.badge} ${styles.badgeBlue}`}>Complete Service Catalog</span>
                         <h1>Comprehensive solutions for every stage of your business journey</h1>
                         <p>From incorporation to IPO. 21+ services across 4 categories.</p>
                     </div>
@@ -193,10 +193,10 @@ export default function ServicesPage() {
             </section>
 
             {/* Services Grid */}
-            <section className={`section ${styles.servicesSection}`}>
+            <section className={`${styles.section} ${styles.servicesSection}`}>
                 <div className="container">
                     {filteredCategories.map(category => (
-                        <div key={category.id} id={category.id} className={`${styles.categorySection} ${styles[category.theme]}`}>
+                        <div key={category.id} id={category.id} className={`${styles.categorySection} ${styles[`theme-${category.theme}`]}`}>
                             <div className={styles.categoryHeader}>
                                 <div className={styles.categoryIcon}>{category.icon}</div>
                                 <div className={styles.categoryTitleGroup}>
@@ -206,7 +206,7 @@ export default function ServicesPage() {
                             </div>
                             <div className={styles.servicesGrid}>
                                 {category.services.map((service, idx) => (
-                                    <div key={idx} className={`card ${styles.serviceCard}`}>
+                                    <div key={idx} className={styles.serviceCard}>
                                         <div className={styles.cardHighlight}></div>
                                         <h3>{service.title}</h3>
                                         <p>{service.description}</p>
@@ -237,7 +237,7 @@ export default function ServicesPage() {
                         <p>We offer many more services. Talk to our experts and we&apos;ll find the right solution for you.</p>
                         <a
                             href={whatsappLink}
-                            className="btn btn-primary btn-lg"
+                            className={styles.ctaBtn}
                             target="_blank"
                             rel="noopener noreferrer"
                         >
