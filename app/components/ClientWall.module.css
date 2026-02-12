@@ -1,10 +1,252 @@
-/* ClientWall - v3 Figma-quality */
+/* ClientWall - Aura v4 */
 
 .section {
-    padding: var(--space-24) 0;
-    background-color: var(--white);
-    border-top: 1px solid var(--gray-100);
-    border-bottom: 1px solid var(--gray-100);
+    padding: var(--space-20) 0;
+    background: linear-gradient(180deg, transparent 0%, var(--blue-muted) 100%);
+    border-top: none;
+    border-bottom: none;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: var(--space-12);
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.subtitle {
+    color: var(--blue);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: var(--text-2xs);
+    margin-bottom: var(--space-4);
+    display: block;
+}
+
+.title {
+    font-size: var(--text-4xl);
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: var(--space-3);
+    letter-spacing: -0.045em;
+}
+
+.description {
+    font-size: var(--text-base);
+    color: var(--gray-600);
+    line-height: 1.72;
+}
+
+/* Search */
+.searchWrapper {
+    max-width: 360px;
+    margin: 0 auto var(--space-10);
+    position: relative;
+    animation: fadeInUp 0.8s ease-out 0.1s both;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 0.65rem 1.125rem;
+    padding-left: 2.5rem;
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    font-size: var(--text-sm);
+    outline: none;
+    transition: all var(--transition-base);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: var(--backdrop-blur);
+    color: var(--navy);
+    font-family: var(--font-body);
+}
+
+.searchInput:focus {
+    border-color: rgba(59, 91, 219, 0.5);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 0 3px var(--blue-muted);
+}
+
+.searchIcon {
+    position: absolute;
+    left: 0.85rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray-400);
+    pointer-events: none;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: var(--space-10);
+    flex-wrap: wrap;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.tab {
+    padding: 6px 16px;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: var(--backdrop-blur-sm);
+    color: var(--gray-600);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    font-size: var(--text-sm);
+    font-family: var(--font-body);
+}
+
+.tab:hover {
+    border-color: rgba(59, 91, 219, 0.4);
+    color: var(--navy);
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.activeTab {
+    background: var(--blue);
+    color: var(--white);
+    border-color: var(--blue);
+    box-shadow: 0 4px 12px rgba(59, 91, 219, 0.2);
+}
+
+.activeTab:hover {
+    background: var(--blue-lighter);
+    border-color: var(--blue-lighter);
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: var(--space-4);
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: var(--backdrop-blur);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-6);
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: all var(--transition-slow);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-aura);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(59, 91, 219, 0.3);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.logoWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logoImage {
+    object-fit: contain;
+    max-width: 80%;
+    max-height: 70%;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all var(--transition-base);
+}
+
+.card:hover .logoImage {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.08);
+}
+
+.nameOnly {
+    font-weight: 600;
+    font-size: var(--text-2xs);
+    color: var(--gray-600);
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: var(--space-12);
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.loadMoreBtn {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: var(--backdrop-blur);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: var(--navy);
+    padding: 8px 24px;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    font-size: var(--text-sm);
+    font-family: var(--font-body);
+    box-shadow: var(--shadow-aura);
+}
+
+.loadMoreBtn:hover {
+    border-color: rgba(59, 91, 219, 0.3);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .section {
+        padding: var(--space-16) 0;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: var(--space-3);
+    }
+
+    .card {
+        padding: var(--space-4);
+        height: 95px;
+    }
+
+    .title {
+        font-size: var(--text-3xl);
+    }
+
+    .searchWrapper {
+        margin-bottom: var(--space-8);
+    }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .header {
