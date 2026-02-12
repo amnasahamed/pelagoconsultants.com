@@ -1,31 +1,42 @@
-/* About Page Styles */
+/* About Page Styles - v2 Premium */
 
 .hero {
     padding: 180px 0 80px;
-    background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+    background: var(--white);
     text-align: center;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--gray-100);
 }
 
 .heroContent {
-    max-width: 700px;
+    max-width: 660px;
     margin: 0 auto;
 }
 
 .heroContent h1 {
-    margin: var(--space-4) 0 var(--space-6);
+    margin: var(--space-5) 0 var(--space-6);
+    font-weight: 800;
+    letter-spacing: -0.04em;
 }
 
 .highlight {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--blue);
 }
 
 .heroContent p {
-    font-size: var(--text-xl);
-    color: var(--gray-600);
+    font-size: var(--text-lg);
+    color: var(--gray-500);
     margin-bottom: 0;
+    line-height: 1.7;
 }
 
 /* Story Section */
@@ -36,17 +47,19 @@
 .storyGrid {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
-    gap: var(--space-12);
+    gap: var(--space-16);
     align-items: center;
 }
 
 .storyContent h2 {
     margin-bottom: var(--space-6);
+    font-weight: 800;
+    letter-spacing: -0.03em;
 }
 
 .storyContent p {
-    color: var(--gray-600);
-    font-size: var(--text-lg);
+    color: var(--gray-500);
+    font-size: var(--text-base);
     line-height: 1.8;
 }
 
@@ -59,41 +72,55 @@
     width: 100%;
     max-width: 400px;
     aspect-ratio: 4/3;
-    background: var(--gray-100);
+    background: var(--gray-50);
     border-radius: var(--radius-2xl);
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid var(--gray-100);
 }
 
 /* Mission Section */
 .missionGrid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-8);
+    gap: var(--space-6);
 }
 
 .missionCard {
     background: var(--white);
-    padding: var(--space-8);
-    border-radius: var(--radius-xl);
+    padding: var(--space-10);
+    border-radius: var(--radius-2xl);
     text-align: center;
-    box-shadow: var(--shadow-md);
+    border: 1px solid var(--gray-100);
+    transition: all var(--transition-slow);
+}
+
+.missionCard:hover {
+    box-shadow: var(--shadow-card-hover);
+    border-color: transparent;
+    transform: translateY(-4px);
 }
 
 .missionIcon {
-    font-size: 3rem;
-    display: block;
-    margin-bottom: var(--space-4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-5);
+    color: var(--blue);
 }
 
 .missionCard h3 {
     margin-bottom: var(--space-3);
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 .missionCard p {
-    color: var(--gray-600);
+    color: var(--gray-500);
     margin-bottom: 0;
+    font-size: var(--text-sm);
+    line-height: 1.7;
 }
 
 /* Team Section */
@@ -105,41 +132,44 @@
 }
 
 .staffHeader {
-    margin-top: var(--space-20);
+    margin-top: var(--space-24);
     text-align: center;
 }
 
 .staffHeader h3 {
     font-size: var(--text-3xl);
     margin-top: var(--space-2);
+    font-weight: 800;
+    letter-spacing: -0.03em;
 }
 
 .staffGrid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-8);
+    gap: var(--space-6);
     margin-top: var(--space-12);
 }
 
 .teamCard {
     text-align: center;
-    transition: transform var(--transition-base);
+    transition: transform var(--transition-slow);
 }
 
 .teamCard:hover {
-    transform: translateY(-8px);
+    transform: translateY(-4px);
 }
 
 .teamImageContainer {
     position: relative;
     width: 100%;
     aspect-ratio: 3/4;
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-5);
     overflow: hidden;
     border-radius: var(--radius-2xl);
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    background: var(--gray-50);
 }
 
 .teamImageBg {
@@ -150,15 +180,15 @@
     height: 80%;
     background: var(--accent);
     filter: blur(40px);
-    opacity: 0.15;
+    opacity: 0.1;
     border-radius: 50%;
-    transition: all var(--transition-base);
+    transition: all var(--transition-slow);
     z-index: 1;
 }
 
 .teamCard:hover .teamImageBg {
-    opacity: 0.3;
-    transform: scale(1.2);
+    opacity: 0.2;
+    transform: scale(1.1);
 }
 
 .teamImg {
@@ -167,107 +197,125 @@
     object-fit: contain;
     width: 100%;
     height: 100%;
-    transition: transform var(--transition-base);
+    transition: transform var(--transition-slow);
 }
 
 .teamCard:hover .teamImg {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .teamInfo h3 {
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
+    font-weight: 700;
     margin-bottom: var(--space-1);
+    letter-spacing: -0.01em;
 }
 
 .teamInfo p {
-    font-size: var(--text-sm);
-    color: var(--gray-500);
+    font-size: var(--text-xs);
+    color: var(--gray-400);
     margin-bottom: 0;
+    font-weight: 500;
 }
 
 /* Values Section */
 .valuesGrid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-6);
+    gap: var(--space-5);
 }
 
 .valueCard {
     text-align: center;
-    padding: var(--space-6);
+    padding: var(--space-8);
     background: var(--gray-50);
-    border-radius: var(--radius-xl);
-    transition: all var(--transition-base);
+    border-radius: var(--radius-2xl);
+    transition: all var(--transition-slow);
+    border: 1px solid transparent;
 }
 
 .valueCard:hover {
     background: var(--white);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-card-hover);
     transform: translateY(-4px);
+    border-color: var(--gray-100);
 }
 
 .valueIcon {
-    font-size: 2.5rem;
-    display: block;
-    margin-bottom: var(--space-4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-4);
+    color: var(--blue);
 }
 
 .valueCard h3 {
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
+    font-weight: 700;
     margin-bottom: var(--space-2);
+    letter-spacing: -0.01em;
 }
 
 .valueCard p {
     font-size: var(--text-sm);
-    color: var(--gray-600);
+    color: var(--gray-500);
     margin-bottom: 0;
+    line-height: 1.7;
 }
 
 /* Certifications */
 .certGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-6);
+    gap: var(--space-5);
 }
 
 .certCard {
     background: var(--white);
     padding: var(--space-8);
-    border-radius: var(--radius-xl);
+    border-radius: var(--radius-2xl);
     text-align: center;
-    box-shadow: var(--shadow-md);
+    border: 1px solid var(--gray-100);
+    transition: all var(--transition-slow);
+}
+
+.certCard:hover {
+    box-shadow: var(--shadow-card-hover);
+    border-color: transparent;
+    transform: translateY(-4px);
 }
 
 .certBadge {
-    width: 60px;
-    height: 60px;
-    background: var(--success);
-    color: var(--white);
-    border-radius: var(--radius-full);
+    width: 52px;
+    height: 52px;
+    background: var(--success-light);
+    color: var(--success);
+    border-radius: var(--radius-xl);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: var(--text-2xl);
-    margin: 0 auto var(--space-4);
+    margin: 0 auto var(--space-5);
 }
 
 .certCard h3 {
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
+    font-weight: 700;
     margin-bottom: var(--space-2);
+    letter-spacing: -0.01em;
 }
 
 .certCard p {
     font-size: var(--text-sm);
-    color: var(--gray-500);
+    color: var(--gray-400);
     margin-bottom: var(--space-3);
 }
 
 .viewCertLink {
     display: inline-flex;
     align-items: center;
-    gap: var(--space-1);
+    gap: 6px;
     font-size: var(--text-sm);
-    font-weight: 500;
+    font-weight: 600;
     color: var(--blue);
     text-decoration: none;
     transition: all var(--transition-fast);
@@ -275,18 +323,35 @@
 
 .viewCertLink:hover {
     color: var(--navy);
-    text-decoration: underline;
 }
 
 /* Stats Section */
 .statsSection {
-    background: var(--gradient-primary);
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+}
+
+.statsSection::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    background: var(--blue);
+    filter: blur(200px);
+    opacity: 0.08;
+    border-radius: 50%;
 }
 
 .statsGrid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: var(--space-8);
+    position: relative;
+    z-index: 1;
 }
 
 .statItem {
@@ -298,13 +363,15 @@
     display: block;
     font-family: var(--font-heading);
     font-size: var(--text-5xl);
-    font-weight: 700;
+    font-weight: 800;
     margin-bottom: var(--space-2);
+    letter-spacing: -0.04em;
 }
 
 .statLabel {
-    font-size: var(--text-base);
-    opacity: 0.9;
+    font-size: var(--text-sm);
+    opacity: 0.5;
+    font-weight: 500;
 }
 
 /* Gallery Section */
@@ -315,20 +382,20 @@
 .galleryGrid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-4);
+    gap: var(--space-3);
 }
 
 .galleryItem {
     aspect-ratio: 4/3;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     overflow: hidden;
     cursor: pointer;
-    transition: all var(--transition-base);
+    transition: all var(--transition-slow);
 }
 
 .galleryItem:hover {
     transform: scale(1.02);
-    box-shadow: var(--shadow-xl);
+    box-shadow: var(--shadow-lg);
 }
 
 .galleryItem:nth-child(1) {
@@ -344,12 +411,12 @@
 @media (max-width: 1024px) {
     .teamGrid {
         grid-template-columns: repeat(3, 1fr);
-        gap: var(--space-6);
+        gap: var(--space-5);
     }
 
     .staffGrid {
         grid-template-columns: repeat(3, 1fr);
-        gap: var(--space-6);
+        gap: var(--space-5);
     }
 
     .galleryGrid {
@@ -385,7 +452,7 @@
     }
 
     .valuesGrid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .teamGrid {

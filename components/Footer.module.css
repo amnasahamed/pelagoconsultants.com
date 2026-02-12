@@ -1,37 +1,42 @@
 .footer {
-    background: var(--gray-50);
-    border-top: 1px solid var(--gray-200);
-    padding: var(--space-16) 0 var(--space-8);
+    background: var(--navy);
+    color: rgba(255, 255, 255, 0.7);
+    padding: var(--space-20) 0 var(--space-8);
     position: relative;
 }
 
 .footerContent {
     display: flex;
     flex-direction: column;
-    gap: var(--space-12);
+    gap: var(--space-16);
 }
 
 .footerMain {
     display: grid;
-    grid-template-columns: 1.5fr 2fr;
-    gap: var(--space-12);
+    grid-template-columns: 1.2fr 2fr;
+    gap: var(--space-16);
 }
 
 .footerBrand {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--space-5);
+}
+
+.logo {
+    display: inline-block;
 }
 
 .logo img {
-    height: 45px;
+    height: 40px;
     width: auto;
+    filter: brightness(0) invert(1);
 }
 
 .tagline {
-    color: var(--gray-600);
-    font-size: var(--text-base);
-    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: var(--text-sm);
+    line-height: 1.7;
     max-width: 280px;
     margin-bottom: 0;
 }
@@ -42,6 +47,13 @@
     gap: var(--space-2);
 }
 
+.badges .badge {
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.65rem;
+}
+
 .footerLinks {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -49,12 +61,12 @@
 }
 
 .linkColumn h4 {
-    font-size: var(--text-sm);
+    font-size: 0.7rem;
     font-weight: 600;
-    color: var(--navy);
+    color: rgba(255, 255, 255, 0.4);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: var(--space-4);
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-5);
 }
 
 .linkColumn ul {
@@ -65,16 +77,17 @@
 
 .linkColumn li {
     font-size: var(--text-sm);
-    color: var(--gray-600);
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.5;
 }
 
 .linkColumn a {
-    color: var(--gray-600);
+    color: rgba(255, 255, 255, 0.6);
     transition: color var(--transition-fast);
 }
 
 .linkColumn a:hover {
-    color: var(--blue);
+    color: var(--white);
 }
 
 .footerBottom {
@@ -82,38 +95,36 @@
     justify-content: space-between;
     align-items: center;
     padding-top: var(--space-8);
-    border-top: 1px solid var(--gray-200);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footerBottom p {
-    color: var(--gray-500);
+    color: rgba(255, 255, 255, 0.35);
     font-size: var(--text-sm);
     margin-bottom: 0;
 }
 
 .socialLinks {
     display: flex;
-    gap: var(--space-4);
+    gap: var(--space-2);
 }
 
 .socialLinks a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: var(--radius-full);
-    background: var(--white);
-    color: var(--gray-600);
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.5);
     transition: all var(--transition-fast);
-    border: 1px solid var(--gray-200);
 }
 
 .socialLinks a:hover {
-    background: var(--blue);
+    background: rgba(255, 255, 255, 0.12);
     color: var(--white);
-    border-color: var(--blue);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
 /* WhatsApp Button */
@@ -121,30 +132,31 @@
     position: fixed;
     bottom: var(--space-6);
     right: var(--space-6);
-    width: 60px;
-    height: 60px;
+    width: 56px;
+    height: 56px;
     background: #25D366;
     color: var(--white);
-    border-radius: var(--radius-full);
+    border-radius: var(--radius-xl);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
     transition: all var(--transition-base);
     z-index: 999;
 }
 
 .whatsappBtn:hover {
-    background: #128C7E;
-    transform: scale(1.1);
+    background: #22c55e;
+    transform: translateY(-2px) scale(1.05);
     color: var(--white);
+    box-shadow: 0 12px 32px rgba(37, 211, 102, 0.4);
 }
 
 /* Mobile Styles */
 @media (max-width: 1024px) {
     .footerMain {
         grid-template-columns: 1fr;
-        gap: var(--space-8);
+        gap: var(--space-10);
     }
 
     .footerLinks {
@@ -158,7 +170,7 @@
     }
 
     .footerLinks {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: var(--space-6);
     }
 
@@ -173,5 +185,6 @@
         right: var(--space-4);
         width: 48px;
         height: 48px;
+        border-radius: var(--radius-lg);
     }
 }
