@@ -4,8 +4,8 @@
 
 .page {
     min-height: 100vh;
-    padding: 120px var(--space-4) var(--space-12);
-    background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+    padding: 140px var(--space-4) var(--space-12);
+    background: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,17 +24,20 @@
     padding: var(--space-10);
     text-align: center;
     box-shadow: var(--shadow-xl);
+    border: 1px solid var(--gray-100);
 }
 
 .startCard h1 {
     font-size: var(--text-4xl);
     color: var(--navy);
     margin: var(--space-4) 0;
+    font-weight: 800;
+    letter-spacing: -0.04em;
 }
 
 .startCard>p {
-    font-size: var(--text-lg);
-    color: var(--gray-600);
+    font-size: var(--text-base);
+    color: var(--gray-500);
     line-height: 1.7;
     margin-bottom: var(--space-8);
 }
@@ -71,6 +74,7 @@
     border-radius: var(--radius-2xl);
     padding: var(--space-8);
     box-shadow: var(--shadow-xl);
+    border: 1px solid var(--gray-100);
 }
 
 .progressBar {
@@ -83,7 +87,7 @@
 
 .progressFill {
     height: 100%;
-    background: var(--gradient-primary);
+    background: var(--blue);
     border-radius: var(--radius-full);
     transition: width 0.3s ease;
 }
@@ -133,6 +137,7 @@
     padding: var(--space-8);
     text-align: center;
     box-shadow: var(--shadow-xl);
+    border: 1px solid var(--gray-100);
 }
 
 .resultCard h2 {

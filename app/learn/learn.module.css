@@ -4,7 +4,7 @@
 
 .page {
     min-height: 100vh;
-    background: var(--gray-50);
+    background: var(--white);
 }
 
 /* ================================
@@ -13,7 +13,7 @@
 
 .hero {
     padding: 140px 0 var(--space-16);
-    background: linear-gradient(135deg, var(--navy) 0%, #0f172a 100%);
+    background: var(--navy);
     position: relative;
     overflow: hidden;
 }
@@ -21,11 +21,15 @@
 .hero::before {
     content: '';
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: 100%;
-    background: radial-gradient(circle at 70% 30%, rgba(67, 97, 238, 0.3) 0%, transparent 50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: var(--blue);
+    filter: blur(200px);
+    opacity: 0.1;
+    border-radius: 50%;
 }
 
 .heroGrid {
@@ -54,17 +58,15 @@
 
 .heroContent h1 {
     font-size: var(--text-5xl);
-    font-weight: 700;
+    font-weight: 800;
     margin: var(--space-6) 0;
     line-height: 1.1;
     color: var(--white);
+    letter-spacing: -0.04em;
 }
 
 .heroContent h1 span {
-    background: linear-gradient(135deg, #93c5fd, #c4b5fd);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    color: var(--blue-light);
 }
 
 .heroContent p {
@@ -218,9 +220,9 @@
 }
 
 .moduleCard:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.15);
-    border-color: var(--module-color);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: transparent;
 }
 
 .moduleCard:hover::before {

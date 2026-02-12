@@ -31,15 +31,15 @@
     color: var(--navy);
     margin: var(--space-6) 0;
     line-height: 1.1;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.04em;
 }
 
 .heroContent p {
-    font-size: var(--text-xl);
-    color: var(--gray-600);
+    font-size: var(--text-lg);
+    color: var(--gray-500);
     margin-bottom: var(--space-10);
-    line-height: 1.6;
-    max-width: 650px;
+    line-height: 1.7;
+    max-width: 560px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -99,18 +99,18 @@
 }
 
 .toolCard:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
-    border-color: var(--blue-light);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: transparent;
 }
 
 .toolIcon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 64px;
-    height: 64px;
-    background: rgba(67, 97, 238, 0.05);
+    width: 56px;
+    height: 56px;
+    background: var(--blue-muted);
     border-radius: var(--radius-xl);
     margin-bottom: var(--space-6);
     color: var(--blue);
@@ -118,9 +118,8 @@
 }
 
 .toolCard:hover .toolIcon {
-    background: var(--blue);
+    background: var(--navy);
     color: var(--white);
-    transform: rotate(-5deg) scale(1.1);
 }
 
 .toolCard h3 {
