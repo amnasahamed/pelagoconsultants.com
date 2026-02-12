@@ -196,7 +196,7 @@ export default function ServicesPage() {
             <section className={`${styles.section} ${styles.servicesSection}`}>
                 <div className="container">
                     {filteredCategories.map(category => (
-                        <div key={category.id} id={category.id} className={`${styles.categorySection} ${styles[`theme-${category.theme}`]}`}>
+                        <div key={category.id} id={category.id} className={`${styles.categorySection} ${styles[category.theme]}`}>
                             <div className={styles.categoryHeader}>
                                 <div className={styles.categoryIcon}>{category.icon}</div>
                                 <div className={styles.categoryTitleGroup}>
