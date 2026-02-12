@@ -1,19 +1,28 @@
 /* ================================
-   PELAGO CONSULTANTS - DESIGN SYSTEM v3
-   Figma-quality, Pixel-perfect
+   PELAGO CONSULTANTS - AURA DESIGN SYSTEM v4
+   Bento Grids + Ethereal Aesthetic
    ================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Brand */
+  /* Brand - Aura Palette */
   --navy: #0C1222;
   --navy-dark: #070B14;
   --navy-light: #1A2640;
   --blue: #3B5BDB;
+  --blue-lighter: #6b8fff;
   --blue-light: #748FFC;
   --blue-dark: #2B4ACB;
-  --blue-muted: rgba(59, 91, 219, 0.07);
+  --blue-muted: rgba(59, 91, 219, 0.08);
+  --blue-glow: rgba(107, 139, 255, 0.3);
+  
+  /* Aura Colors - Warm & Ethereal */
+  --aura-cream: #f8f6f1;
+  --aura-warm: #fdf9f5;
+  --aura-sage: #dce6d8;
+  --aura-soft-rose: #f5e6e1;
+  --aura-peach: #ffe8d6;
 
   /* Neutrals -- refined warm-tinted grays */
   --white: #FFFFFF;
@@ -110,10 +119,15 @@
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.07), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
   --shadow-card: 0 0 0 1px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.04);
-  --shadow-card-hover: 0 0 0 1px rgba(0, 0, 0, 0.02), 0 12px 28px -4px rgba(0, 0, 0, 0.08), 0 4px 8px -2px rgba(0, 0, 0, 0.03);
-  --shadow-glow: 0 0 80px -20px rgba(59, 91, 219, 0.2);
+  --shadow-card-hover: 0 0 0 1px rgba(0, 0, 0, 0.02), 0 12px 40px rgba(59, 91, 219, 0.15), 0 0 40px rgba(107, 139, 255, 0.1);
+  --shadow-glow: 0 0 40px rgba(107, 139, 255, 0.2), 0 0 60px rgba(59, 91, 219, 0.1);
+  --shadow-aura: 0 8px 32px rgba(59, 91, 219, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
   --shadow-nav: 0 1px 0 rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.02);
   --shadow-float: 0 16px 40px -8px rgba(0, 0, 0, 0.12), 0 4px 12px -4px rgba(0, 0, 0, 0.06);
+  
+  /* Backdrop Blur - Glassmorphism */
+  --backdrop-blur: blur(10px);
+  --backdrop-blur-sm: blur(6px);
 
   /* Transitions */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -126,8 +140,14 @@
   --transition-spring: 500ms var(--ease-spring);
 
   /* Container */
-  --container-max: 1180px;
+  --container-max: 1280px;
   --container-padding: 1.5rem;
+  
+  /* Gradients - Aura */
+  --gradient-blue: linear-gradient(135deg, #3B5BDB 0%, #6b8fff 100%);
+  --gradient-aura: linear-gradient(135deg, rgba(59, 91, 219, 0.1) 0%, rgba(107, 139, 255, 0.05) 100%);
+  --gradient-ethereal: linear-gradient(180deg, rgba(253, 249, 245, 0.8) 0%, rgba(248, 246, 241, 0.4) 100%);
+  --gradient-warm-glow: linear-gradient(135deg, rgba(253, 249, 245, 0.4) 0%, rgba(255, 232, 214, 0.2) 100%);
 }
 
 /* ================================

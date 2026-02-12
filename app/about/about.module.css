@@ -1,25 +1,31 @@
-/* About Page - v3 Figma-quality */
+/* About Page - Aura v4 */
 
 .hero {
-    padding: 180px 0 80px;
-    background: var(--off-white);
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, var(--aura-warm) 0%, var(--white) 50%, var(--aura-cream) 100%);
     text-align: center;
     position: relative;
+    overflow: hidden;
 }
 
-.hero::after {
+.hero::before {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: var(--gray-100);
+    top: -40%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--blue-glow) 0%, transparent 70%);
+    filter: blur(80px);
+    z-index: 0;
 }
 
 .heroContent {
     max-width: 620px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .heroContent h1 {
@@ -41,7 +47,8 @@
 
 /* Story */
 .storySection {
-    background: var(--white);
+    background: transparent;
+    padding: var(--space-20) 0;
 }
 
 .storyGrid {
@@ -55,12 +62,13 @@
     margin-bottom: var(--space-5);
     font-weight: 800;
     letter-spacing: -0.04em;
+    color: var(--navy);
 }
 
 .storyContent p {
-    color: var(--gray-500);
-    font-size: var(--text-sm);
-    line-height: 1.78;
+    color: var(--gray-600);
+    font-size: var(--text-base);
+    line-height: 1.8;
 }
 
 .storyImage {
@@ -72,34 +80,47 @@
     width: 100%;
     max-width: 380px;
     aspect-ratio: 4/3;
-    background: var(--gray-50);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: var(--backdrop-blur);
     border-radius: var(--radius-2xl);
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--gray-100);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: var(--shadow-aura);
+    transition: all var(--transition-slow);
+}
+
+.imagePlaceholder:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(59, 91, 219, 0.3);
 }
 
 /* Mission */
 .missionGrid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-5);
+    gap: var(--space-6);
+    padding: var(--space-20) 0;
 }
 
 .missionCard {
-    background: var(--white);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: var(--backdrop-blur);
     padding: var(--space-9);
     border-radius: var(--radius-2xl);
     text-align: center;
-    border: 1px solid var(--gray-100);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     transition: all var(--transition-slow);
+    box-shadow: var(--shadow-aura);
 }
 
 .missionCard:hover {
     box-shadow: var(--shadow-card-hover);
-    border-color: transparent;
-    transform: translateY(-3px);
+    border-color: rgba(59, 91, 219, 0.3);
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .missionIcon {
@@ -108,19 +129,21 @@
     justify-content: center;
     margin: 0 auto var(--space-5);
     color: var(--blue);
+    font-size: 2rem;
 }
 
 .missionCard h3 {
     margin-bottom: var(--space-3);
     font-weight: 700;
     letter-spacing: -0.02em;
+    color: var(--navy);
 }
 
 .missionCard p {
-    color: var(--gray-500);
+    color: var(--gray-600);
     margin-bottom: 0;
-    font-size: var(--text-sm);
-    line-height: 1.72;
+    font-size: var(--text-base);
+    line-height: 1.7;
 }
 
 /* Team */
@@ -152,11 +175,11 @@
 
 .teamCard {
     text-align: center;
-    transition: transform var(--transition-slow);
+    transition: all var(--transition-slow);
 }
 
 .teamCard:hover {
-    transform: translateY(-3px);
+    transform: translateY(-6px);
 }
 
 .teamImageContainer {
@@ -221,23 +244,26 @@
 .valuesGrid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-4);
+    gap: var(--space-6);
+    padding: var(--space-20) 0;
 }
 
 .valueCard {
     text-align: center;
-    padding: var(--space-7);
-    background: var(--gray-50);
+    padding: var(--space-8);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: var(--backdrop-blur);
     border-radius: var(--radius-2xl);
     transition: all var(--transition-slow);
-    border: 1px solid transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: var(--shadow-aura);
 }
 
 .valueCard:hover {
-    background: var(--white);
+    background: rgba(255, 255, 255, 0.9);
     box-shadow: var(--shadow-card-hover);
-    transform: translateY(-3px);
-    border-color: var(--gray-100);
+    transform: translateY(-6px);
+    border-color: rgba(59, 91, 219, 0.3);
 }
 
 .valueIcon {
@@ -266,22 +292,26 @@
 .certGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-4);
+    gap: var(--space-6);
+    padding: var(--space-20) 0;
 }
 
 .certCard {
-    background: var(--white);
-    padding: var(--space-7);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: var(--backdrop-blur);
+    padding: var(--space-8);
     border-radius: var(--radius-2xl);
     text-align: center;
-    border: 1px solid var(--gray-100);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     transition: all var(--transition-slow);
+    box-shadow: var(--shadow-aura);
 }
 
 .certCard:hover {
     box-shadow: var(--shadow-card-hover);
-    border-color: transparent;
-    transform: translateY(-3px);
+    border-color: rgba(59, 91, 219, 0.3);
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .certBadge {
@@ -325,9 +355,10 @@
 
 /* Stats */
 .statsSection {
-    background: var(--navy);
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
     position: relative;
     overflow: hidden;
+    padding: var(--space-24) 0;
 }
 
 .statsSection::before {
@@ -338,9 +369,9 @@
     transform: translate(-50%, -50%);
     width: 500px;
     height: 500px;
-    background: var(--blue);
-    filter: blur(180px);
-    opacity: 0.06;
+    background: var(--blue-glow);
+    filter: blur(80px);
+    opacity: 0.2;
     border-radius: 50%;
 }
 
@@ -405,6 +436,12 @@
     grid-column: span 2;
 }
 
+/* Gallery */
+.gallerySection {
+    background: transparent;
+    padding: var(--space-20) 0;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     .teamGrid {
@@ -429,6 +466,17 @@
     .galleryItem:nth-child(5) {
         grid-column: span 1;
     }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 768px) {

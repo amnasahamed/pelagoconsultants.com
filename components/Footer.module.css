@@ -1,14 +1,26 @@
 .footer {
-    background: var(--navy);
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
     color: rgba(255, 255, 255, 0.6);
     padding: var(--space-24) 0 var(--space-8);
     position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 20%, var(--blue-glow) 0%, transparent 50%);
+    opacity: 0.2;
+    pointer-events: none;
 }
 
 .footerContent {
     display: flex;
     flex-direction: column;
     gap: var(--space-16);
+    position: relative;
+    z-index: 1;
 }
 
 .footerMain {
@@ -31,12 +43,17 @@
     height: 36px;
     width: auto;
     filter: brightness(0) invert(1);
+    transition: all var(--transition-base);
+}
+
+.logo:hover img {
+    filter: brightness(1.1) invert(1);
 }
 
 .tagline {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.5);
     font-size: var(--text-sm);
-    line-height: 1.7;
+    line-height: 1.8;
     max-width: 260px;
     margin-bottom: 0;
 }
@@ -48,10 +65,11 @@
 }
 
 .badges .badge {
-    background: rgba(255, 255, 255, 0.06);
-    color: rgba(255, 255, 255, 0.55);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     font-size: var(--text-2xs);
+    backdrop-filter: var(--backdrop-blur-sm);
 }
 
 .footerLinks {
@@ -62,10 +80,10 @@
 
 .linkColumn h4 {
     font-size: var(--text-2xs);
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.3);
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.4);
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     margin-bottom: var(--space-5);
 }
 
@@ -77,17 +95,18 @@
 
 .linkColumn li {
     font-size: var(--text-sm);
-    color: rgba(255, 255, 255, 0.5);
-    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.6;
 }
 
 .linkColumn a {
-    color: rgba(255, 255, 255, 0.5);
-    transition: color var(--transition-fast);
+    color: rgba(255, 255, 255, 0.55);
+    transition: all var(--transition-base);
 }
 
 .linkColumn a:hover {
     color: var(--white);
+    transform: translateX(2px);
 }
 
 .footerBottom {
@@ -95,36 +114,39 @@
     justify-content: space-between;
     align-items: center;
     padding-top: var(--space-8);
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footerBottom p {
-    color: rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.35);
     font-size: var(--text-xs);
     margin-bottom: 0;
 }
 
 .socialLinks {
     display: flex;
-    gap: 6px;
+    gap: 8px;
 }
 
 .socialLinks a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 34px;
-    height: 34px;
-    border-radius: var(--radius-md);
-    background: rgba(255, 255, 255, 0.05);
-    color: rgba(255, 255, 255, 0.4);
-    transition: all var(--transition-fast);
+    width: 38px;
+    height: 38px;
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.5);
+    transition: all var(--transition-base);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: var(--backdrop-blur-sm);
 }
 
 .socialLinks a:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     color: var(--white);
-    transform: translateY(-1px);
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* WhatsApp */
@@ -134,22 +156,23 @@
     right: var(--space-6);
     width: 52px;
     height: 52px;
-    background: #25D366;
+    background: linear-gradient(135deg, #25D366 0%, #22c55e 100%);
     color: var(--white);
     border-radius: var(--radius-xl);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
     transition: all var(--transition-base);
     z-index: 999;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .whatsappBtn:hover {
-    background: #22c55e;
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    transform: translateY(-4px);
     color: var(--white);
-    box-shadow: 0 10px 28px rgba(37, 211, 102, 0.35);
+    box-shadow: 0 12px 32px rgba(37, 211, 102, 0.4);
 }
 
 /* Mobile */
