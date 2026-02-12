@@ -4,16 +4,16 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: var(--space-5) 0;
+    padding: var(--space-4) 0;
     transition: all var(--transition-slow);
     background: transparent;
 }
 
 .header.scrolled {
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    box-shadow: var(--shadow-nav);
     padding: var(--space-3) 0;
 }
 
@@ -21,6 +21,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: var(--space-2);
 }
 
 .logo {
@@ -28,29 +29,30 @@
     align-items: center;
     z-index: 1001;
     transition: opacity var(--transition-fast);
+    flex-shrink: 0;
 }
 
 .logo:hover {
-    opacity: 0.8;
+    opacity: 0.75;
 }
 
 .logo img {
-    height: 40px;
+    height: 36px;
     width: auto;
 }
 
 .navLinks {
     display: flex;
     align-items: center;
-    gap: var(--space-1);
+    gap: 2px;
 }
 
 .navLink {
     font-size: var(--text-sm);
     font-weight: 500;
-    color: var(--gray-600);
+    color: var(--gray-500);
     position: relative;
-    padding: 0.4rem 0.85rem;
+    padding: 6px 12px;
     border-radius: var(--radius-md);
     transition: all var(--transition-fast);
     letter-spacing: -0.01em;
@@ -62,19 +64,21 @@
 }
 
 .ctaButton {
-    margin-left: var(--space-3);
+    margin-left: var(--space-2);
     background: var(--navy);
     color: var(--white);
-    padding: 0.55rem 1.25rem;
+    padding: 7px 18px;
     border-radius: var(--radius-lg);
     font-size: var(--text-sm);
     font-weight: 600;
     transition: all var(--transition-base);
     letter-spacing: -0.01em;
+    border: 1.5px solid var(--navy);
 }
 
 .ctaButton:hover {
     background: var(--navy-light);
+    border-color: var(--navy-light);
     color: var(--white);
     transform: translateY(-1px);
     box-shadow: var(--shadow-md);
@@ -97,11 +101,11 @@
 
 .mobileMenuBtn span {
     display: block;
-    width: 20px;
+    width: 18px;
     height: 1.5px;
     background: var(--navy);
     transition: all var(--transition-base);
-    border-radius: 2px;
+    border-radius: 1px;
 }
 
 .mobileMenuBtn.open span:nth-child(1) {
@@ -116,7 +120,7 @@
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Mobile Styles */
+/* Mobile */
 @media (max-width: 900px) {
     .navLinks {
         position: fixed;
@@ -127,7 +131,7 @@
         background: var(--white);
         flex-direction: column;
         justify-content: center;
-        gap: var(--space-3);
+        gap: var(--space-2);
         transition: right var(--transition-slow);
         padding: var(--space-8);
     }

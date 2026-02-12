@@ -1,7 +1,7 @@
-/* ClientWall.module.css - v2 */
+/* ClientWall - v3 Figma-quality */
 
 .section {
-    padding: var(--space-20) 0;
+    padding: var(--space-24) 0;
     background-color: var(--white);
     border-top: 1px solid var(--gray-100);
     border-bottom: 1px solid var(--gray-100);
@@ -10,17 +10,17 @@
 .header {
     text-align: center;
     margin-bottom: var(--space-12);
-    max-width: 640px;
+    max-width: 580px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .subtitle {
     color: var(--blue);
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    font-size: var(--text-2xs);
     margin-bottom: var(--space-4);
     display: block;
 }
@@ -30,38 +30,39 @@
     font-weight: 800;
     color: var(--navy);
     margin-bottom: var(--space-3);
-    letter-spacing: -0.03em;
+    letter-spacing: -0.04em;
 }
 
 .description {
-    font-size: var(--text-base);
+    font-size: var(--text-sm);
     color: var(--gray-500);
-    line-height: 1.7;
+    line-height: 1.72;
 }
 
-/* Tab Navigation */
+/* Tabs */
 .tabs {
     display: flex;
     justify-content: center;
-    gap: var(--space-2);
+    gap: 6px;
     margin-bottom: var(--space-10);
     flex-wrap: wrap;
 }
 
 .tab {
-    padding: 0.5rem 1.25rem;
+    padding: 5px 16px;
     border-radius: var(--radius-lg);
-    border: 1px solid var(--gray-200);
+    border: 1.5px solid var(--gray-200);
     background: var(--white);
     color: var(--gray-500);
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
     transition: all var(--transition-base);
     font-size: var(--text-sm);
+    font-family: var(--font-body);
 }
 
 .tab:hover {
-    border-color: var(--navy);
+    border-color: var(--gray-400);
     color: var(--navy);
 }
 
@@ -77,18 +78,18 @@
     border-color: var(--navy-light);
 }
 
-/* Wall Grid */
+/* Grid */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: var(--space-4);
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: var(--space-3);
 }
 
 .card {
     background: var(--gray-50);
     border-radius: var(--radius-xl);
     padding: var(--space-5);
-    height: 110px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -120,37 +121,37 @@
     max-width: 80%;
     max-height: 70%;
     filter: grayscale(100%);
-    opacity: 0.6;
+    opacity: 0.55;
     transition: all var(--transition-base);
 }
 
 .card:hover .logoImage {
     filter: grayscale(0%);
     opacity: 1;
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
 
 .nameOnly {
     font-weight: 600;
-    font-size: var(--text-xs);
+    font-size: var(--text-2xs);
     color: var(--gray-500);
     line-height: 1.4;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
 }
 
 /* Search */
 .searchWrapper {
-    max-width: 380px;
+    max-width: 360px;
     margin: 0 auto var(--space-10);
     position: relative;
 }
 
 .searchInput {
     width: 100%;
-    padding: 0.75rem 1.25rem;
-    padding-left: 2.75rem;
+    padding: 0.6rem 1.125rem;
+    padding-left: 2.5rem;
     border-radius: var(--radius-xl);
-    border: 1px solid var(--gray-200);
+    border: 1.5px solid var(--gray-200);
     font-size: var(--text-sm);
     outline: none;
     transition: all var(--transition-base);
@@ -162,19 +163,19 @@
 .searchInput:focus {
     border-color: var(--navy);
     background: var(--white);
-    box-shadow: 0 0 0 3px rgba(15, 23, 41, 0.06);
+    box-shadow: 0 0 0 3px rgba(12, 18, 34, 0.04);
 }
 
 .searchIcon {
     position: absolute;
-    left: 0.9rem;
+    left: 0.85rem;
     top: 50%;
     transform: translateY(-50%);
     color: var(--gray-400);
     pointer-events: none;
 }
 
-/* Pagination / View More */
+/* Footer */
 .footer {
     text-align: center;
     margin-top: var(--space-10);
@@ -182,9 +183,9 @@
 
 .loadMoreBtn {
     background: var(--white);
-    border: 1px solid var(--gray-200);
+    border: 1.5px solid var(--gray-200);
     color: var(--navy);
-    padding: 0.6rem 1.75rem;
+    padding: 7px 22px;
     border-radius: var(--radius-lg);
     font-weight: 600;
     cursor: pointer;
@@ -194,19 +195,19 @@
 }
 
 .loadMoreBtn:hover {
-    border-color: var(--navy);
+    border-color: var(--gray-400);
     box-shadow: var(--shadow-sm);
 }
 
 @media (max-width: 768px) {
     .grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-3);
+        gap: var(--space-2-5);
     }
 
     .card {
         padding: var(--space-4);
-        height: 90px;
+        height: 85px;
     }
 
     .title {

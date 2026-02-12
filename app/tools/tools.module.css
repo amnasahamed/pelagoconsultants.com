@@ -5,7 +5,7 @@
 /* Hero */
 .hero {
     padding: 180px 0 80px;
-    background: var(--white);
+    background: var(--off-white);
     text-align: center;
     position: relative;
 }
@@ -31,15 +31,15 @@
     color: var(--navy);
     margin: var(--space-6) 0;
     line-height: 1.1;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.045em;
 }
 
 .heroContent p {
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
     color: var(--gray-500);
     margin-bottom: var(--space-10);
-    line-height: 1.7;
-    max-width: 560px;
+    line-height: 1.72;
+    max-width: 520px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -99,7 +99,7 @@
 }
 
 .toolCard:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
     box-shadow: var(--shadow-card-hover);
     border-color: transparent;
 }

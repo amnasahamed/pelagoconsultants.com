@@ -1,8 +1,8 @@
-/* Blog Page Styles - v2 */
+/* Blog Page Styles - v3 */
 
 .hero {
     padding: 180px 0 80px;
-    background: var(--white);
+    background: var(--off-white);
     text-align: center;
     position: relative;
 }
@@ -25,14 +25,14 @@
 .heroContent h1 {
     margin: var(--space-5) 0 var(--space-4);
     font-weight: 800;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.045em;
 }
 
 .heroContent p {
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
     color: var(--gray-500);
     margin-bottom: 0;
-    line-height: 1.7;
+    line-height: 1.72;
 }
 
 /* Categories */
@@ -119,7 +119,7 @@
 }
 
 .blogCard:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
     background: var(--white);
     border-color: transparent;
     box-shadow: var(--shadow-card-hover);

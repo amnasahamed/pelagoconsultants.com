@@ -17,7 +17,7 @@ export default function NotFound() {
                     margin: '20px 0 16px', 
                     color: 'var(--navy)',
                     fontWeight: 800,
-                    letterSpacing: '-0.04em',
+                    letterSpacing: '-0.045em',
                     lineHeight: 1.1 
                 }}>
                     Page Not Found

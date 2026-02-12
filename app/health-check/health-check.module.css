@@ -5,7 +5,7 @@
 .page {
     min-height: 100vh;
     padding: 140px var(--space-4) var(--space-12);
-    background: var(--white);
+    background: var(--off-white);
     display: flex;
     align-items: center;
     justify-content: center;
