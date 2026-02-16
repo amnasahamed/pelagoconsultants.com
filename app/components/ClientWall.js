@@ -10,7 +10,8 @@ export default function ClientWall({
     initialCount = 24,
     showSearch = true,
     showTabs = true,
-    isHomePage = false
+    isHomePage = false,
+    variant = 'grid' // 'grid' or 'marquee'
 }) {
     const [searchTerm, setSearchTerm] = useState('');
     const [visibleCount, setVisibleCount] = useState(initialCount);
@@ -19,6 +20,11 @@ export default function ClientWall({
     // Filter clients
     const filteredClients = useMemo(() => {
         let result = allClients;
+
+        // If marquee, only duplicates needed later, but base list should be logo-only usually
+        if (variant === 'marquee') {
+            return result.filter(client => client.hasLogo);
+        }
 
         // Filter by search
         if (searchTerm) {
@@ -33,15 +39,63 @@ export default function ClientWall({
         }
 
         return result;
-    }, [searchTerm, activeTab]);
+    }, [searchTerm, activeTab, variant]);
 
-    const displayedClients = filteredClients.slice(0, visibleCount);
+    const displayedClients = variant === 'marquee' ? filteredClients : filteredClients.slice(0, visibleCount);
     // On homepage, we don't load more, we link to the full page if there are more
     const hasMore = visibleCount < filteredClients.length;
 
     const handleLoadMore = () => {
         setVisibleCount(prev => prev + 24);
     };
+
+    if (variant === 'marquee') {
+        const marqueeClients = [...displayedClients, ...displayedClients]; // Duplicate for infinite scroll
+
+        return (
+            <section className={styles.marqueeSection} id="clients">
+                {/* No container class here to allow full width liquid feel if desired, 
+                   but keeping it contained slightly or full width depends on design. 
+                   User said "Continuous horizontal scrolling logo strip". 
+                   Let's keep it full width or container based on parent. 
+                   Usually container is safer for alignment, but marquee often spans full width.
+                   Let's use container for the header, but maybe full width for the track?
+                   Let's stick to container for now to match other sections, 
+                   or just the track inside container. 
+                */}
+                <div className="container">
+                    <div className={styles.header} style={{ marginBottom: '2rem' }}>
+                        <span className={styles.subtitle}>Our Clients</span>
+                        <h2 className={styles.title}>Trusted by Industry Leaders</h2>
+                    </div>
+
+                    <div className={styles.marqueeContainer}>
+                        <div className={styles.marqueeTrack}>
+                            {marqueeClients.map((client, idx) => (
+                                <div key={`${client.name}-${idx}`} className={styles.marqueeItem} title={client.name}>
+                                    <div className={styles.marqueeLogoWrapper}>
+                                        <Image
+                                            src={client.logo}
+                                            alt={client.name}
+                                            width={150}
+                                            height={80}
+                                            className={styles.marqueeLogo}
+                                        />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className={styles.footer} style={{ marginTop: '2rem' }}>
+                        <Link href="/clients" className="btn btn-secondary">
+                            View All {allClients.length}+ Clients
+                        </Link>
+                    </div>
+                </div>
+            </section>
+        );
+    }
 
     return (
         <section className={styles.section} id="clients">

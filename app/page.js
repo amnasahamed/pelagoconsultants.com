@@ -2,6 +2,7 @@ import styles from './page.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import ClientWall from './components/ClientWall';
+import CaseStudies from './components/CaseStudies';
 
 // SVG Icons
 const icons = {
@@ -21,28 +22,40 @@ const icons = {
 // Service data
 const featuredServices = [
   {
-    title: 'GST Filing',
-    description: 'Stay compliant with regular GST filings and expert consultancy.',
-    icon: icons.gst,
-    href: '/services#tax',
+    title: 'Business Strategy',
+    description: 'Datadriven growth planning and market entry strategies.',
+    icon: icons.decisions,
+    href: '/services#strategy',
   },
   {
-    title: 'ISO Certifications',
-    description: 'ISO 9001, 22000, 45001 and more to prove your global quality standards.',
-    icon: icons.iso,
-    href: '/services#certifications',
+    title: 'Operations & Process',
+    description: 'Streamline workflows and optimize resource allocation.',
+    icon: icons.speed,
+    href: '/services#operations',
   },
   {
-    title: 'Startup India Registration',
-    description: 'Recognition from DPIIT for tax exemptions and government support.',
-    icon: icons.startup,
-    href: '/services#registration',
+    title: 'Marketing & Sales',
+    description: 'Structure your sales funnel and brand positioning.',
+    icon: icons.digital,
+    href: '/services#marketing',
   },
   {
-    title: 'ITR Filing',
-    description: 'Individual and corporate income tax return filing services.',
-    icon: icons.itr,
-    href: '/services#tax',
+    title: 'HR & Leadership',
+    description: 'Talent acquisition systems and leadership development.',
+    icon: icons.expert,
+    href: '/services#hr',
+  },
+  {
+    title: 'Financial Structuring',
+    description: 'Tax planning, compliance, and financial health optimization.',
+    icon: icons.finance,
+    href: '/services#finance',
+  },
+  {
+    title: 'Governance & Risk',
+    description: 'Corporate governance, legal compliance, and risk control.',
+    icon: icons.compliant,
+    href: '/services#governance',
   },
 ];
 
@@ -191,21 +204,19 @@ export default function Home() {
                 </span>
               </div>
               <h1 className={`${styles.heroTitle} animate-fade-in-up`} style={{ animationDelay: '0.1s' }}>
-                We Handle Compliance, <br />
-                <span className={styles.heroHighlight}>So You Can Focus on Growth.</span>
+                End-to-End Business Consulting for <br />
+                <span className={styles.heroHighlight}>Growth, Governance & Operational Excellence.</span>
               </h1>
               <p className={`${styles.heroText} animate-fade-in-up`} style={{ animationDelay: '0.2s' }}>
-                From company formation to tax, legal, and ongoing compliance — we take care of the essentials so you can build and scale with confidence.
+                Startups | SME | Corporate Advisory — We take you from ideas to execution.
               </p>
               <div className={`${styles.heroButtons} animate-fade-in-up`} style={{ animationDelay: '0.3s' }}>
-                <a
-                  href="https://api.whatsapp.com/send/?phone=917994659991&text=Hi%2C+I+need+help+with+business+compliance&type=phone_number&app_absent=0"
+                <Link
+                  href="/contact"
                   className="btn btn-primary btn-lg"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
-                  Talk to a Compliance Expert
-                </a>
+                  Book a Strategy Call
+                </Link>
                 <Link href="/services" className="btn btn-secondary btn-lg">
                   Explore Services
                 </Link>
@@ -275,11 +286,21 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className={styles.heroBackground}></div>
+        <div className={styles.heroBackground}>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className={styles.heroVideo}
+          >
+            <source src="/hero-background.mp4" type="video/mp4" />
+          </video>
+        </div>
       </section>
 
       {/* Client Wall */}
-      <ClientWall isHomePage={true} initialCount={16} showSearch={false} />
+      <ClientWall isHomePage={true} variant="marquee" showSearch={false} showTabs={false} />
 
       {/* Services Section */}
       <section className={`section ${styles.servicesSection}`}>
@@ -313,6 +334,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Case Studies */}
+      <CaseStudies />
 
       {/* Why Choose Us */}
       <section className={`section bg-gray ${styles.whySection}`}>
@@ -522,14 +546,12 @@ export default function Home() {
                 </svg>
                 Chat on WhatsApp
               </a>
-              <a
-                href="https://api.whatsapp.com/send/?phone=917994659991&text=Hi%2C+I+need+help+with+business+compliance&type=phone_number&app_absent=0"
+              <Link
+                href="/contact"
                 className="btn btn-primary btn-lg"
-                target="_blank"
-                rel="noopener noreferrer"
               >
-                Get Started
-              </a>
+                Book Strategy Session
+              </Link>
             </div>
           </div>
         </div>

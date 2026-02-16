@@ -8,14 +8,16 @@ export default function ContactPage() {
         name: '',
         email: '',
         phone: '',
+        phone: '',
         service: '',
+        revenue: '',
         message: '',
     });
 
     const handleSubmit = (e) => {
         e.preventDefault();
         // In production, this would send to an API
-        const whatsappMessage = `Hi, I'm ${formData.name}. I'm interested in ${formData.service || 'your services'}. ${formData.message}`;
+        const whatsappMessage = `Hi, I'm ${formData.name}. I'm interested in ${formData.service || 'your services'}. My business revenue is around ${formData.revenue || 'undisclosed'}. ${formData.message}`;
         window.open(`https://wa.me/917994659991?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
     };
 
@@ -29,9 +31,9 @@ export default function ContactPage() {
             <section className={styles.hero}>
                 <div className="container">
                     <div className={styles.heroContent}>
-                        <span className="badge badge-blue">Contact Us</span>
-                        <h1>Let&apos;s discuss your business needs</h1>
-                        <p>Get in touch with our experts for a free consultation.</p>
+                        <span className="badge badge-blue">Strategy Session</span>
+                        <h1>Book a Business Strategy Session</h1>
+                        <p>Talk to our experts about scaling your business.</p>
                     </div>
                 </div>
             </section>
@@ -98,6 +100,22 @@ export default function ContactPage() {
                                         <option value="ITR Filing">ITR Filing</option>
                                         <option value="FSSAI">FSSAI Registration</option>
                                         <option value="Other">Other</option>
+
+                                    </select>
+                                </div>
+                                <div className={styles.formGroup}>
+                                    <label htmlFor="revenue">Annual Revenue Range</label>
+                                    <select
+                                        id="revenue"
+                                        name="revenue"
+                                        value={formData.revenue}
+                                        onChange={handleChange}
+                                    >
+                                        <option value="">Select Range</option>
+                                        <option value="< 20 Lakhs">&lt; 20 Lakhs (Early Stage)</option>
+                                        <option value="20L - 1 Cr">20L - 1 Cr (Growing)</option>
+                                        <option value="1 Cr - 10 Cr">1 Cr - 10 Cr (Scaling)</option>
+                                        <option value="10 Cr+">10 Cr+ (Enterprise)</option>
                                     </select>
                                 </div>
                                 <div className={styles.formGroup}>
@@ -178,8 +196,8 @@ export default function ContactPage() {
                             </a>
                         </div>
                     </div>
-                </div>
-            </section>
+                </div >
+            </section >
         </>
     );
 }

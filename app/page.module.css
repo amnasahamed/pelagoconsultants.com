@@ -24,6 +24,18 @@
     radial-gradient(circle at 90% 80%, rgba(67, 97, 238, 0.08) 0%, transparent 40%),
     linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
   z-index: -1;
+  overflow: hidden;
+}
+
+.heroVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.2;
+  z-index: -1;
 }
 
 .heroLayout {

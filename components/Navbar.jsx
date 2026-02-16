@@ -54,13 +54,13 @@ export default function Navbar() {
           ))}
           <li className={styles.mobileCtaItem}>
             <Link href="/contact" className="btn btn-primary">
-              Contact Us
+              Book Strategy Call
             </Link>
           </li>
         </ul>
 
         <Link href="/contact" className={`btn btn-primary ${styles.ctaButton}`}>
-          Contact Us
+          Book Strategy Call
         </Link>
 
         <button

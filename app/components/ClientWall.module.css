@@ -6,7 +6,79 @@
     background-image:
         radial-gradient(at 0% 0%, rgba(67, 97, 238, 0.03) 0px, transparent 50%),
         radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.03) 0px, transparent 50%);
+    overflow: hidden;
+    /* Ensure no scrollbars from marquee */
 }
+
+/* Marquee Specific Styles */
+.marqueeSection {
+    padding: 4rem 0;
+    /* Slightly less padding for marquee view */
+    background: white;
+    /* Clean background for marquee */
+    border-top: 1px solid var(--gray-100);
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.marqueeContainer {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    padding: 1rem 0;
+}
+
+.marqueeTrack {
+    display: flex;
+    gap: 4rem;
+    /* Spacing between logos */
+    width: max-content;
+    animation: scroll 30s linear infinite;
+}
+
+.marqueeTrack:hover {
+    animation-play-state: paused;
+    /* Optional: pause on hover for better UX */
+    cursor: default;
+}
+
+.marqueeItem {
+    position: relative;
+    width: 150px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+
+.marqueeItem:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.marqueeLogo {
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+        /* Move by half the total width (since we duplicate the list) */
+    }
+}
+
+/* Existing Styles ... */
 
 .header {
     text-align: center;
@@ -207,5 +279,16 @@
 
     .title {
         font-size: 2rem;
+    }
+
+    .marqueeTrack {
+        gap: 2rem;
+        /* Smaller gap on mobile */
+    }
+
+    .marqueeItem {
+        width: 120px;
+        /* Smaller logos on mobile */
+        height: 60px;
     }
 }
