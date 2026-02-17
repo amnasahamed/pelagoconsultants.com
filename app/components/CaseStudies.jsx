@@ -11,7 +11,7 @@ const caseStudies = [
         category: 'Operations',
         result: 'Reduced Tax Exposure by 28%',
         description: 'Streamlined compliance and operations for a mid-sized manufacturing unit, resulting in significant cost savings and improved cash flow.',
-        image: '/blog/gst-filing.png', // Fallback image for now
+        image: '/case-studies/3.jpg',
         stats: [
             { label: 'Tax Saved', value: '28%' },
             { label: 'Cash Flow', value: '+35%' },
@@ -23,7 +23,7 @@ const caseStudies = [
         category: 'Startup Advisory',
         result: 'DPIIT Recognition in 2 Weeks',
         description: 'Guided a fintech startup through incorporation, trademarking, and Startup India recognition, enabling them to secure seed funding.',
-        image: '/blog/startup-india.png', // Fallback image for now
+        image: '/case-studies/2.jpg',
         stats: [
             { label: 'Speed', value: '14 Days' },
             { label: 'Funding', value: 'Secured' },
@@ -35,7 +35,7 @@ const caseStudies = [
         category: 'Franchise Strategy',
         result: 'Successful 5-Outlet Expansion',
         description: 'Structured the legal and operational framework for a retail brand to launch 5 new franchise outlets within a year.',
-        image: '/blog/business-structure.png', // Fallback image for now
+        image: '/case-studies/1.jpg',
         stats: [
             { label: 'Growth', value: '5x' },
             { label: 'Legal Risk', value: '0%' },
@@ -57,7 +57,14 @@ export default function CaseStudies() {
                     {caseStudies.map((study) => (
                         <div key={study.id} className={styles.card}>
                             <div className={styles.imageWrapper}>
-                                {/* Using a placeholder div if image fails or isn't perfect, but trying to use existing assets */}
+                                <Image
+                                    src={study.image}
+                                    alt={study.title}
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    style={{ objectFit: 'cover' }}
+                                />
+                                <div className={styles.imageOverlay}></div>
                                 <div className={styles.categoryBadge}>{study.category}</div>
                             </div>
                             <div className={styles.content}>

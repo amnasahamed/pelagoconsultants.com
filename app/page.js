@@ -217,7 +217,7 @@ export default function Home() {
                 >
                   Book a Strategy Call
                 </Link>
-                <Link href="/services" className="btn btn-secondary btn-lg">
+                <Link href="/services" className={`btn btn-secondary btn-lg ${styles.btnExplore}`}>
                   Explore Services
                 </Link>
               </div>
@@ -287,6 +287,7 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.heroBackground}>
+          <div className={styles.heroDecor}></div>
           <video
             autoPlay
             loop

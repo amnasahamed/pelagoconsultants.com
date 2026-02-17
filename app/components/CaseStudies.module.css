@@ -26,15 +26,34 @@
 .imageWrapper {
     height: 200px;
     background: var(--navy);
-    /* Fallback */
     position: relative;
     display: flex;
     align-items: flex-end;
     padding: var(--space-4);
-    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+    overflow: hidden;
+}
+
+.imageWrapper img {
+    object-transition: transform 0.5s ease;
+}
+
+.card:hover .imageWrapper img {
+    transform: scale(1.05);
+}
+
+.imageOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 60%);
+    z-index: 1;
 }
 
 .categoryBadge {
+    position: relative;
+    z-index: 2;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(4px);
     color: var(--white);

@@ -42,76 +42,209 @@ const benefits = [
 
 const openings = [
     {
+        id: 'mca-compliance-associate',
+        title: 'MCA Compliance Associate',
+        department: 'Corporate & Compliance Services',
+        location: 'Kozhikode',
+        type: 'Full-time, On-site',
+        experience: '0–1 years / Freshers',
+        qualification: 'M.Com / CS (Inter)',
+        isNew: true,
+        poster: null,
+        requirements: [
+            'Strong knowledge of MCA portal procedures',
+            'Handle Company & LLP Incorporation (End-to-end)',
+            'Prepare and file annual filings (AOC-4, MGT-7)',
+            'Manage DPIIT, Startup India, and other registrations',
+            'Professional communication and client coordination',
+        ],
+        fullDescription: {
+            summary: 'Pelago Consultants LLP is seeking a dedicated and detail-oriented MCA Compliance Associate to join our Corporate & Compliance Services team. This role involves end-to-end handling of company and LLP incorporation, annual compliance filings, and various statutory registrations through the MCA and other government portals. The position is ideal for commerce graduates or candidates with prior experience in corporate compliance who are seeking hands-on exposure to incorporation procedures and regulatory compliance under the Companies Act and LLP Act.',
+            responsibilities: [
+                'Incorporation & Registration Services: Handle end-to-end Company Incorporation (Private Limited, OPC, Section 8 Companies).',
+                'Handle LLP Incorporation including FiLLiP filing and post-incorporation compliance.',
+                'Manage Name Reservation (RUN / SPICe+ Part A).',
+                'Coordinate DIN, DSC, and related documentation.',
+                'Assist in drafting incorporation-related documentation (MOA/AOA coordination).',
+                'Handle post-incorporation registrations (PAN, TAN, AGILE, etc.).',
+                'Annual & Event-Based Compliance: Prepare and file annual filings.',
+                'File DIR-3 KYC and related director compliance forms.',
+                'Handle LLP Form 8 and Form 11 filings.',
+                'Process change in directors/partners.',
+                'Handle registered office change filings.',
+                'Assist in capital increase and other event-based filings.',
+                'Support strike-off and closure procedures.',
+                'Government Registrations & Licenses: Handle DPIIT and Startup India registrations.',
+                'Process IEC registration.',
+                'Assist in FSSAI registration.',
+                'Process MSME registration and updates.',
+                'Coordinate other statutory registrations as required.',
+                'MCA Portal & Documentation Handling: Independently manage MCA portal filings.',
+                'Ensure timely and accurate submission of forms.',
+                'Maintain proper digital documentation and filing records.',
+                'Minimize resubmissions through accurate preparation and review.',
+                'Coordinate DSC-related processes with internal team.',
+                'Client Coordination: Collect required documents from clients.',
+                'Share compliance checklists and follow-up for pending documents.',
+                'Provide basic compliance updates to clients.',
+                'Update task progress in internal ERP system.',
+                'Maintain organized client compliance files.'
+            ],
+            eligibility: [
+                'M.Com / CS (Inter) preferred.',
+                '0 –1 years of experience in MCA compliance preferred.',
+                'Freshers with strong practical knowledge may apply.',
+                'Basic understanding of Companies Act and LLP Act provisions.'
+            ],
+            skills: [
+                'Strong knowledge of MCA portal procedures',
+                'Accuracy and attention to detail',
+                'Time management and deadline orientation',
+                'Professional communication skills',
+                'Ability to handle multiple compliance tasks simultaneously',
+                'Basic proficiency in MS Excel and documentation tools'
+            ],
+            compensation: [
+                'Salary: As per industry standards and candidate experience',
+                'Performance-based increment after probation period',
+                'Additional incentives may be applicable based on performance',
+                'Service Commitment: Mandatory 1-year service commitment from the date of joining.'
+            ],
+            reportingTo: 'Manager-Corporate & Compliance Services',
+            workPolicy: [
+                'Working Hours: 9:45 AM to 5:45 PM',
+                'Weekly Off: Sunday',
+                'Additional Off: Second Saturday & Fourth Saturday',
+                'Casual Leave: One day per month'
+            ]
+        },
+    },
+    {
+        id: 'portfolio-manager',
+        title: 'Portfolio Manager',
+        department: 'Pelago Equity',
+        location: 'Kozhikode',
+        type: 'Full-time, On-site',
+        experience: 'Experienced',
+        qualification: 'Bachelor’s/Master’s + CMA/ACCA (Pref)',
+        isNew: true,
+        poster: null,
+        requirements: [
+            'Manage client portfolios & implement investment strategies',
+            'Conduct fundamental/technical analysis of equities',
+            'Monitor risk exposure & ensure regulatory compliance',
+            'Strong analytical skills & financial modeling expertise',
+            'Professional certification (CMA/ACCA) preferred',
+        ],
+        fullDescription: {
+            summary: 'Pelago Consultants LLP is seeking an experienced and result-oriented Portfolio Manager to manage and oversee client investment portfolios. The role involves developing customized investment strategies, monitoring market trends, managing risk, and ensuring optimal portfolio performance.',
+            responsibilities: [
+                'Manage and monitor assigned client portfolios to achieve defined financial goals.',
+                'Develop and implement customized investment strategies based on client risk profiles.',
+                'Conduct in-depth fundamental and technical analysis of equities.',
+                'Analyze financial statements, economic indicators, and market trends.',
+                'Monitor portfolio risk exposure and implement appropriate risk mitigation strategies.',
+                'Prepare periodic portfolio performance reports for management review.'
+            ],
+            eligibility: [
+                'Bachelor’s or Master’s degree in Finance, Commerce, Economics, or related field.',
+                'Relevant experience in portfolio management, investment advisory, or financial analysis preferred.',
+                'Strong understanding of capital markets, asset allocation, and risk management principles.',
+                'Professional certifications such as CMA, or ACCA (preferred).'
+            ],
+            skills: [
+                'Strong analytical and financial modeling skills.',
+                'Sound knowledge of equity markets and investment strategies.',
+                'Decision-making and problem-solving ability.',
+                'Excellent communication',
+                'High ethical standards and professional integrity.'
+            ],
+            compensation: [
+                'Compensation will be commensurate with qualifications and experience.',
+                'Performance-based incentives and bonuses may be applicable as per company policy.'
+            ],
+            reportingTo: 'Managing Director',
+            workPolicy: [
+                'Working Hours: 8:30 AM to 4:00 PM',
+                'Weekly Off: Saturday & Sunday',
+                'Market Holidays: As per recognized market holidays',
+                'Leave Policy: As per company policy'
+            ]
+        },
+    },
+    {
         id: 'cma-trainee',
-        title: 'CMA Trainee',
+        title: 'CMA Trainee (INDIA/USA)',
         department: 'Finance & Accounting',
-        location: 'HiLite Business Park, Calicut',
+        location: 'Kozhikode',
         type: 'Full-time, On-site',
         experience: 'Fresher / 0-1 years',
-        qualification: 'CMA (India/USA) pursuing or completed',
+        qualification: 'CMA (Inter/Final) or CMA-USA',
         isNew: true,
         poster: '/careers/cma-trainee.png',
         requirements: [
-            'Strong analytical and numerical skills',
-            'Good communication skills, both written and verbal',
-            'Proficiency in MS Office applications, especially Excel and Word',
-            'Preference for candidates from Calicut or nearby areas',
+            'Hands-on exposure to Accounting, Taxation, GST & Audit',
+            'Strong analytical skills & proficiency in MS Excel/Accounting Software',
+            'Assist in Income Tax (ITR) & GST Returns (GSTR-1, 3B)',
+            'Stipend: ₹5,000 (0-6 mo) → ₹8,000 (6-12 mo) → ₹10,000 (1 yr+)',
+            'Mandatory 1-year service commitment',
         ],
-    },
-    {
-        id: 'compliance-associate',
-        title: 'Compliance Associate',
-        department: 'Business Compliance',
-        location: 'HiLite Business Park, Calicut',
-        type: 'Full-time, On-site',
-        experience: 'Fresher / Experienced',
-        qualification: 'B.Com / M.Com',
-        isNew: true,
-        poster: '/careers/compliance-associate.png',
-        requirements: [
-            'B.Com / M.Com qualification',
-            'Preferably Calicut-based candidates',
-            'Immediate joining availability',
-            'Attention to detail in compliance documentation',
-        ],
-    },
-    {
-        id: 'investment-strategist',
-        title: 'Investment Strategist',
-        department: 'Pelago Equity',
-        location: 'HiLite Business Park, Calicut',
-        type: 'Full-time, On-site',
-        experience: '0-1 year',
-        qualification: 'BCom / MCom',
-        isNew: true,
-        requirements: [
-            'Deep understanding of capital markets and value-based strategies',
-            'Exceptional analytical rigor and research methodology',
-            'Sophisticated communication and stakeholder management skills',
-            'Relentless attention to detail in high-stakes environments',
-        ],
-    },
-    {
-        id: 'visual-specialist',
-        title: 'Visual Specialist',
-        department: 'Marketing & Creative',
-        location: 'HiLite Business Park, Calicut',
-        type: 'Full-time, On-site',
-        experience: '1-3 years',
-        qualification: null,
-        isNew: false,
-        requirements: [
-            'Mastery of Adobe Creative Suite and digital design tools',
-            'A portfolio that demonstrates aesthetic depth and clarity',
-            'Experience crafting premium brand identities and digital assets',
-            'Ability to translate complex strategies into visual narratives',
-            'Exceptional time management and project ownership',
-        ],
+        fullDescription: {
+            summary: 'Pelago consultants LLP is seeking a dedicated and detail-oriented CMA TRAINEE to join our team.This role provides hands on exposure to accounting ,taxation,GST compliance , and statutory compliance.The position is ideal for CMA students or commerce graduates Seeking practical experience in accounting and regulatory compliance.',
+            responsibilities: [
+                'Accounting & Bookkeeping: Maintain day-to-day books of accounts.',
+                'Record financial transactions accurately in accounting software.',
+                'Perform bank and ledger reconciliations.',
+                'Assist in preparation of financial statements.',
+                'Income Tax Compliance: Assist in preparation and filing of Income Tax Returns (ITR).',
+                'Support computation of taxable income.',
+                'Handle basic income tax compliance matters and documentation.',
+                'GST Compliance: Assist in GST registration processes.',
+                'Prepare and file GST returns (GSTR-1, GSTR-3B, etc.).',
+                'Conduct GST reconciliations.',
+                'Respond to routine GST-related queries and notices.',
+                'MCA & Statutory Compliance: Assist in MCA filings and ROC compliance.',
+                'Support audit-related assignments.',
+                'Handle statutory compliance documentation.',
+                'Perform other accounting and compliance-related duties as assigned by management.',
+                'Audit Support: Assist in internal and statutory audit work',
+                'Support preparation of audit schedules and working papers',
+                'Help collect and organize audit documents',
+                'Coordinate with auditors and respond to basic audit queries'
+            ],
+            eligibility: [
+                'CMA (Inter/Final) or CMA -USA (qualified) and Commerce graduate.',
+                'Basic knowledge of accounting, GST, and income tax provisions.',
+                'Proficiency in MS Excel and accounting software preferred.',
+                'Strong analytical skills and attention to detail.'
+            ],
+            skills: [
+                'Accuracy and attention to detail',
+                'Willingness to learn',
+                'Time management skills',
+                'Professional communication skills'
+            ],
+            compensation: [
+                'First 6 Months (Training Period): INR 5,000 per month',
+                'After Completion of 6 Months: INR 8,000 per month',
+                'After Completion of 1 Year: INR 10,000 per month',
+                'Service Commitment: Mandatory 1-year service bond from the date of joining.',
+                'Detailed terms and conditions will be specified in the employment agreement.'
+            ],
+            reportingTo: 'Operational Head',
+            workPolicy: [
+                'Working Hours: 9:45 AM to 5:45 PM',
+                'Weekly Off: Sunday',
+                'Additional Off: Second Saturday & Fourth Saturday',
+                'Casual Leave: One day per month'
+            ]
+        },
     },
 ];
 
 export default function CareersPage() {
     const [selectedJob, setSelectedJob] = useState(null);
+    const [viewingJob, setViewingJob] = useState(null);
     const [fileName, setFileName] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error'
@@ -128,6 +261,68 @@ export default function CareersPage() {
         setFileName('');
         setSubmitStatus(null);
         document.body.style.overflow = 'auto';
+    };
+
+    const handleViewJD = (job) => {
+        setViewingJob(job);
+        document.body.style.overflow = 'hidden';
+    };
+
+    const handleCloseJD = () => {
+        setViewingJob(null);
+        document.body.style.overflow = 'auto';
+    };
+
+    const handleDownloadJD = (job) => {
+        if (!job.fullDescription) return;
+
+        const { title, fullDescription } = job;
+        let content = `${title}\n\n`;
+
+        if (fullDescription.reportingTo) {
+            content += `Reporting To: ${fullDescription.reportingTo}\n\n`;
+        }
+
+        content += `Job Summary:\n${fullDescription.summary}\n\n`;
+
+        if (fullDescription.responsibilities) {
+            content += `Key Responsibilities:\n`;
+            fullDescription.responsibilities.forEach(item => content += `- ${item}\n`);
+            content += `\n`;
+        }
+
+        if (fullDescription.eligibility) {
+            content += `Eligibility Criteria:\n`;
+            fullDescription.eligibility.forEach(item => content += `- ${item}\n`);
+            content += `\n`;
+        }
+
+        if (fullDescription.skills) {
+            content += `Skills Required:\n`;
+            fullDescription.skills.forEach(item => content += `- ${item}\n`);
+            content += `\n`;
+        }
+
+        if (fullDescription.workPolicy) {
+            content += `Working Hours & Leave Policy:\n`;
+            fullDescription.workPolicy.forEach(item => content += `- ${item}\n`);
+            content += `\n`;
+        }
+
+        if (fullDescription.compensation) {
+            content += `Compensation Structure:\n`;
+            fullDescription.compensation.forEach(item => content += `- ${item}\n`);
+        }
+
+        const blob = new Blob([content], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${title.replace(/\s+/g, '_')}_JD.txt`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
     };
 
     const handleFileChange = (e) => {
@@ -292,6 +487,13 @@ export default function CareersPage() {
                                 </div>
                                 <div className={styles.jobCardAction}>
                                     <button
+                                        onClick={() => handleViewJD(job)}
+                                        className={`btn ${styles.btnOutline}`}
+                                        style={{ marginRight: '10px' }}
+                                    >
+                                        View JD
+                                    </button>
+                                    <button
                                         onClick={() => handleApply(job)}
                                         className="btn btn-primary"
                                     >
@@ -303,6 +505,116 @@ export default function CareersPage() {
                     </div>
                 </div>
             </section>
+
+            {/* Job Description Modal */}
+            {viewingJob && (
+                <div className={styles.modalOverlay} onClick={handleCloseJD}>
+                    <div className={styles.jdModalContent} onClick={(e) => e.stopPropagation()}>
+                        <button className={styles.modalClose} onClick={handleCloseJD}>
+                            {icons.close}
+                        </button>
+                        <div className={styles.jdHeader}>
+                            <span className={styles.jobTag}>{viewingJob.department}</span>
+                            <h2>{viewingJob.title}</h2>
+                            {viewingJob.fullDescription?.reportingTo && (
+                                <p style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
+                                    Reporting To: <strong>{viewingJob.fullDescription.reportingTo}</strong>
+                                </p>
+                            )}
+                            <div className={styles.jdMeta}>
+                                <div className={styles.metaItem}>
+                                    {icons.location}
+                                    <span>{viewingJob.location}</span>
+                                </div>
+                                <div className={styles.metaItem}>
+                                    {icons.clock}
+                                    <span>{viewingJob.type}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={styles.jdBody}>
+                            {viewingJob.fullDescription?.summary && (
+                                <div className={styles.jdSection}>
+                                    <h3>Job Summary</h3>
+                                    <p>{viewingJob.fullDescription.summary}</p>
+                                </div>
+                            )}
+
+                            {viewingJob.fullDescription?.responsibilities && (
+                                <div className={styles.jdSection}>
+                                    <h3>Key Responsibilities</h3>
+                                    <ul>
+                                        {viewingJob.fullDescription.responsibilities.map((item, idx) => (
+                                            <li key={idx}>{item}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+
+                            {viewingJob.fullDescription?.eligibility && (
+                                <div className={styles.jdSection}>
+                                    <h3>Eligibility Criteria</h3>
+                                    <ul>
+                                        {viewingJob.fullDescription.eligibility.map((item, idx) => (
+                                            <li key={idx}>{item}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+
+                            {viewingJob.fullDescription?.skills && (
+                                <div className={styles.jdSection}>
+                                    <h3>Skills Required</h3>
+                                    <ul>
+                                        {viewingJob.fullDescription.skills.map((item, idx) => (
+                                            <li key={idx}>{item}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+
+                            {viewingJob.fullDescription?.workPolicy && (
+                                <div className={styles.jdSection}>
+                                    <h3>Working Hours & Leave Policy</h3>
+                                    <ul>
+                                        {viewingJob.fullDescription.workPolicy.map((item, idx) => (
+                                            <li key={idx}>{item}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+
+                            {viewingJob.fullDescription?.compensation && (
+                                <div className={styles.jdSection}>
+                                    <h3>Compensation Structure</h3>
+                                    <ul>
+                                        {viewingJob.fullDescription.compensation.map((item, idx) => (
+                                            <li key={idx}>{item}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
+                        <div className={styles.jdFooter}>
+                            <button
+                                onClick={() => handleDownloadJD(viewingJob)}
+                                className={`btn ${styles.btnOutline}`}
+                            >
+                                Download JD
+                            </button>
+                            <button
+                                onClick={() => {
+                                    handleCloseJD();
+                                    handleApply(viewingJob);
+                                }}
+                                className="btn btn-primary"
+                            >
+                                Apply Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             {/* Application Modal */}
             {selectedJob && (

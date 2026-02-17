@@ -582,3 +582,87 @@
         font-size: var(--text-4xl);
     }
 }
+
+/* JD Modal Styles */
+.jdModalContent {
+    background: var(--white);
+    width: 100%;
+    max-width: 800px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--radius-2xl);
+    position: relative;
+    box-shadow: var(--shadow-2xl);
+    animation: fadeInUp 0.4s ease;
+    overflow: hidden;
+}
+
+.jdHeader {
+    padding: var(--space-8) var(--space-10);
+    border-bottom: 1px solid var(--gray-200);
+    background: var(--gray-50);
+}
+
+.jdHeader h2 {
+    font-size: var(--text-2xl);
+    color: var(--navy);
+    margin: 0 0 var(--space-2) 0;
+}
+
+.jdMeta {
+    display: flex;
+    gap: var(--space-6);
+    color: var(--gray-600);
+    font-size: var(--text-sm);
+    flex-wrap: wrap;
+}
+
+.jdBody {
+    padding: var(--space-10);
+    overflow-y: auto;
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--gray-700);
+}
+
+.jdSection {
+    margin-bottom: var(--space-8);
+}
+
+.jdSection h3 {
+    font-size: var(--text-lg);
+    color: var(--navy);
+    margin-bottom: var(--space-4);
+    font-weight: 700;
+}
+
+.jdSection ul {
+    list-style-type: disc;
+    padding-left: var(--space-5);
+    margin: 0;
+}
+
+.jdSection li {
+    margin-bottom: var(--space-2);
+}
+
+.jdFooter {
+    padding: var(--space-6) var(--space-10);
+    border-top: 1px solid var(--gray-200);
+    background: var(--gray-50);
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-4);
+}
+
+.btnOutline {
+    background: transparent;
+    border: 1px solid var(--gray-300);
+    color: var(--navy);
+}
+
+.btnOutline:hover {
+    border-color: var(--navy);
+    background: var(--gray-50);
+}
