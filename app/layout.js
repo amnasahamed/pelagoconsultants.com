@@ -13,6 +13,11 @@ export const metadata = {
     siteName: "Pelago Consultants",
     type: "website",
   },
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
 };
 
 export default function RootLayout({ children }) {

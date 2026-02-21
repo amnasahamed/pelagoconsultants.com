@@ -158,8 +158,12 @@
     }
 
     .footerLinks {
-        grid-template-columns: 1fr;
-        gap: var(--space-6);
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-8) var(--space-4);
+    }
+
+    .linkColumn:last-child {
+        grid-column: span 2;
     }
 
     .footerBottom {
