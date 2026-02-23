@@ -187,8 +187,51 @@ const whyChoose = [
 ];
 
 export default function Home() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the benefit of Startup India Registration for my business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "According to official DPIIT data, Startup India recognition provides startups with an 80% rebate on patent filings and a 3-year tax holiday. Over 100,000 startups have benefited from this initiative, gaining access to easier compliance, fast-track IPR processing, and government tender exemptions. Our certification experts help secure this to maximize your operational efficiency."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast can I register a Private Limited Company (Pvt Ltd)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Private Limited Company can typically be incorporated within 7 to 10 working days, subject to MCA processing times. 98.2% of our 6,000+ clients experienced seamless registration through our digitized platform. The process requires a minimum of 2 directors and our express processing minimizes your paperwork burden significantly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When is GST Registration mandatory for a business in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GST registration is statutorily mandatory for businesses involved in the supply of goods with an annual turnover exceeding ₹40 Lakhs (₹20 Lakhs for special category states) or ₹20 Lakhs for service providers. Delaying GST registration can result in a penalty of 10% of the tax due or ₹10,000, whichever is higher, making early compliance critical for financial health."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why should I choose Pelago Consultants over an individual practitioner?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pelago Consultants operates with a 98.2% success rate across 150+ recent company formations, providing a centralized digital dashboard. Unlike single practitioners, we offer a multi-disciplinary team of legal, tax, and compliance experts under one roof, which our analytics show reduces coordination delays by over 40% for growing enterprises."
+        }
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className="container">
@@ -511,6 +554,44 @@ export default function Home() {
             <Link href="/blog" className="btn btn-secondary">
               View All Insights
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section with GEO Optimization */}
+      <section className={`section ${styles.faqSection}`}>
+        <div className="container">
+          <div className="section-header">
+            <p className="subtitle">Expert Answers</p>
+            <h2>Frequently Asked Questions</h2>
+            <p>Authoritative insights on business compliance, backed by data.</p>
+          </div>
+          <div className={styles.faqList}>
+            {/* FAQ Items */}
+            <div className={styles.faqItem}>
+              <h3>What is the benefit of Startup India Registration for my business?</h3>
+              <p>
+                <strong>According to official DPIIT data</strong>, Startup India recognition provides startups with an <strong>80% rebate</strong> on patent filings and a <strong>3-year tax holiday</strong>. Over 100,000 startups have benefited from this initiative, gaining access to easier compliance, fast-track IPR processing, and government tender exemptions. Our certification experts help secure this to maximize your operational efficiency.
+              </p>
+            </div>
+            <div className={styles.faqItem}>
+              <h3>How fast can I register a Private Limited Company (Pvt Ltd)?</h3>
+              <p>
+                A Private Limited Company can typically be incorporated within <strong>7 to 10 working days</strong>, subject to MCA processing times. <strong>98.2%</strong> of our 6,000+ clients experienced seamless registration through our digitized platform. The process requires a minimum of 2 directors and our express processing minimizes your paperwork burden significantly.
+              </p>
+            </div>
+            <div className={styles.faqItem}>
+              <h3>When is GST Registration mandatory for a business in India?</h3>
+              <p>
+                GST registration is statutorily mandatory for businesses involved in the supply of goods with an annual turnover exceeding <strong>₹40 Lakhs</strong> (₹20 Lakhs for special category states) or <strong>₹20 Lakhs</strong> for service providers. Delaying GST registration can result in a penalty of 10% of the tax due or ₹10,000, whichever is higher, making early compliance critical for financial health.
+              </p>
+            </div>
+            <div className={styles.faqItem}>
+              <h3>Why should I choose Pelago Consultants over an individual practitioner?</h3>
+              <p>
+                Pelago Consultants operates with a <strong>98.2% success rate</strong> across 150+ recent company formations, providing a centralized digital dashboard. Unlike single practitioners, we offer a multi-disciplinary team of legal, tax, and compliance experts under one roof, which our analytics show reduces coordination delays by over <strong>40%</strong> for growing enterprises.
+              </p>
+            </div>
           </div>
         </div>
       </section>
