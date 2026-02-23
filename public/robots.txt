@@ -1,0 +1,32 @@
+# Robots.txt for Pelago Consultants
+# Allow all search engines and AI crawlers
+
+# Allow Google and standard search engines
+User-agent: Googlebot
+Allow: /
+
+# Allow OpenAI's GPT Bot
+User-agent: GPTBot
+Allow: /
+
+# Allow Anthropic's Claude Bot
+User-agent: Claude-Web
+Allow: /
+
+# Allow Perplexity Bot
+User-agent: PerplexityBot
+Allow: /
+
+# Allow other AI search engines
+User-agent: Copilot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Allow all other bots
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://pelagoconsultants.com/sitemap.xml
