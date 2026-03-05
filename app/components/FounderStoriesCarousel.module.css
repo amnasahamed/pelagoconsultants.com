@@ -1,0 +1,328 @@
+/* Founder Stories - Split Before/After Cards */
+
+.section {
+    padding: 120px 0;
+    background: #f8fafc;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.header h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1e3a5f;
+    margin-bottom: 12px;
+}
+
+.header p {
+    font-size: 20px;
+    color: #64748b;
+}
+
+/* Stories Grid */
+.storiesGrid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 32px;
+    align-items: start;
+}
+
+.featuredWrapper {
+    height: 100%;
+}
+
+.otherStories {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Story Card */
+.storyCard {
+    background: white;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.storyCard:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e1;
+}
+
+.featuredCard {
+    padding: 40px;
+}
+
+/* Industry Tag */
+.industryTag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #1e3a5f;
+    background: #f1f5f9;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+    width: fit-content;
+}
+
+/* Transformation - Before/After Split */
+.transformation {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.beforeSection,
+.afterSection {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.afterSection {
+    background: #f0fdf4;
+}
+
+.sectionLabel {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.beforeSection .sectionLabel {
+    color: #64748b;
+}
+
+.afterSection .sectionLabel {
+    color: #16a34a;
+}
+
+/* Point List */
+.pointList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pointList li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: #475569;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.pointList li:last-child {
+    margin-bottom: 0;
+}
+
+.crossIcon {
+    color: #ef4444;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.checkIcon {
+    color: #16a34a;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+/* Divider with Arrow */
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow {
+    width: 32px;
+    height: 32px;
+    background: #1e3a5f;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Highlight */
+.highlight {
+    font-size: 18px;
+    font-weight: 700;
+    color: #16a34a;
+    padding: 12px 16px;
+    background: #f0fdf4;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    border-left: 4px solid #16a34a;
+}
+
+.featuredCard .highlight {
+    font-size: 22px;
+    padding: 16px 20px;
+}
+
+/* Quote */
+.quote {
+    font-size: 15px;
+    color: #64748b;
+    font-style: italic;
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.featuredCard .quote {
+    font-size: 17px;
+}
+
+/* Founder Info */
+.founder {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1e3a5f 0%, #334155 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.founderInfo {
+    flex: 1;
+}
+
+.founderName {
+    font-weight: 700;
+    color: #1e293b;
+    font-size: 15px;
+}
+
+.founderRole {
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* Stars */
+.stars {
+    display: flex;
+    gap: 3px;
+}
+
+/* CTA */
+.ctaWrapper {
+    text-align: center;
+    margin-top: 48px;
+}
+
+.ctaButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 32px;
+    background: transparent;
+    border: 2px solid #1e3a5f;
+    color: #1e3a5f;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.ctaButton:hover {
+    background: #1e3a5f;
+    color: white;
+    text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .storiesGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .otherStories {
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 16px;
+    }
+
+    .otherStories > * {
+        flex: 0 0 340px;
+        scroll-snap-align: start;
+    }
+
+    .header h2 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 640px) {
+    .section {
+        padding: 80px 0;
+    }
+
+    .header h2 {
+        font-size: 28px;
+    }
+
+    .header p {
+        font-size: 16px;
+    }
+
+    .storyCard {
+        padding: 24px;
+    }
+
+    .featuredCard {
+        padding: 28px;
+    }
+
+    .transformation {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .otherStories > * {
+        flex: 0 0 300px;
+    }
+}

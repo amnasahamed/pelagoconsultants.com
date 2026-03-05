@@ -9,10 +9,10 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
-  { href: '/tools', label: 'Tools' },
+  { href: '/tools', label: 'Free Tools' },
   { href: '/learn', label: 'Learn' },
   { href: '/blog', label: 'Blog' },
-  { href: '/careers', label: 'Careers' },
+  { href: '/careers', label: 'Join Us' },
 ];
 
 export default function Navbar() {
@@ -54,13 +54,13 @@ export default function Navbar() {
           ))}
           <li className={styles.mobileCtaItem}>
             <Link href="/contact" className="btn btn-primary">
-              Book Strategy Call
+              Get Free Help
             </Link>
           </li>
         </ul>
 
         <Link href="/contact" className={`btn btn-primary ${styles.ctaButton}`}>
-          Book Strategy Call
+          Get Free Help
         </Link>
 
         <button

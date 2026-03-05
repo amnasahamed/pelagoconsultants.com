@@ -6,8 +6,8 @@
 .hero {
     padding: 160px 0 100px;
     background:
-        radial-gradient(circle at 10% 20%, rgba(67, 97, 238, 0.05) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(67, 97, 238, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 10% 20%, rgba(30, 58, 95, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(30, 58, 95, 0.08) 0%, transparent 40%),
         linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
     text-align: center;
     border-bottom: 1px solid var(--gray-100);
@@ -56,7 +56,7 @@
     font-family: var(--font-heading);
     font-size: var(--text-4xl);
     font-weight: 800;
-    color: var(--blue);
+    color: var(--primary);
 }
 
 .statLabel {
@@ -103,15 +103,15 @@
     justify-content: center;
     width: 64px;
     height: 64px;
-    background: rgba(67, 97, 238, 0.05);
+    background: rgba(30, 58, 95, 0.05);
     border-radius: var(--radius-xl);
     margin-bottom: var(--space-6);
-    color: var(--blue);
+    color: var(--primary);
     transition: all var(--transition-base);
 }
 
 .toolCard:hover .toolIcon {
-    background: var(--blue);
+    background: var(--primary);
     color: var(--white);
     transform: rotate(-5deg) scale(1.1);
 }
@@ -258,9 +258,9 @@
 .inputGroup input:focus,
 .inputGroup select:focus {
     outline: none;
-    border-color: var(--blue);
+    border-color: var(--primary);
     background: var(--white);
-    box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.1);
+    box-shadow: 0 0 0 4px rgba(30, 58, 95, 0.1);
 }
 
 .checkboxGroup {
@@ -283,7 +283,7 @@
 .checkboxGroup input[type="checkbox"] {
     width: 20px;
     height: 20px;
-    accent-color: var(--blue);
+    accent-color: var(--primary);
 }
 
 /* Results */

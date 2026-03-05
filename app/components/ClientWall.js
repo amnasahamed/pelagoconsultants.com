@@ -2,38 +2,42 @@
 
 import { useState, useMemo } from 'react';
 import Image from 'next/image';
-import Link from 'next/link'; // Added Link import
+import Link from 'next/link';
 import styles from './ClientWall.module.css';
 import { allClients } from '../clients/client-data';
+
+// Stats for social proof
+const stats = [
+    { number: '6000+', label: 'Clients' },
+    { number: '150+', label: 'Registrations' },
+    { number: '98%', label: 'Retention' },
+    { number: '10+', label: 'Years Experience' },
+];
 
 export default function ClientWall({
     initialCount = 24,
     showSearch = true,
     showTabs = true,
     isHomePage = false,
-    variant = 'grid' // 'grid' or 'marquee'
+    variant = 'grid'
 }) {
     const [searchTerm, setSearchTerm] = useState('');
     const [visibleCount, setVisibleCount] = useState(initialCount);
-    const [activeTab, setActiveTab] = useState('all'); // 'all', 'featured'
+    const [activeTab, setActiveTab] = useState('all');
 
-    // Filter clients
     const filteredClients = useMemo(() => {
         let result = allClients;
 
-        // If marquee, only duplicates needed later, but base list should be logo-only usually
         if (variant === 'marquee') {
             return result.filter(client => client.hasLogo);
         }
 
-        // Filter by search
         if (searchTerm) {
             result = result.filter(client =>
                 client.name.toLowerCase().includes(searchTerm.toLowerCase())
             );
         }
 
-        // If we want a "Featured" tab that only shows Logos
         if (activeTab === 'featured') {
             result = result.filter(client => client.hasLogo);
         }
@@ -42,27 +46,74 @@ export default function ClientWall({
     }, [searchTerm, activeTab, variant]);
 
     const displayedClients = variant === 'marquee' ? filteredClients : filteredClients.slice(0, visibleCount);
-    // On homepage, we don't load more, we link to the full page if there are more
     const hasMore = visibleCount < filteredClients.length;
 
     const handleLoadMore = () => {
         setVisibleCount(prev => prev + 24);
     };
 
+    // Premium homepage variant
+    if (isHomePage) {
+        const logoClients = allClients.filter(client => client.hasLogo).slice(0, 10);
+
+        return (
+            <section className={styles.premiumSection} id="clients">
+                <div className="container">
+                    {/* Header */}
+                    <div className={styles.premiumHeader}>
+                        <h2 className={styles.premiumTitle}>Trusted by 100+ Growing Businesses</h2>
+                        <p className={styles.premiumSubtitle}>
+                            Startups, SMEs and enterprises across India<br />
+                            trust us for compliance and company formation.
+                        </p>
+                    </div>
+
+                    {/* Logo Grid */}
+                    <div className={styles.logoGrid}>
+                        {logoClients.map((client, idx) => (
+                            <div 
+                                key={`${client.name}-${idx}`} 
+                                className={styles.logoItem} 
+                                title={client.name}
+                            >
+                                <Image
+                                    src={client.logo}
+                                    alt={client.name}
+                                    width={120}
+                                    height={50}
+                                    className={styles.logoImagePremium}
+                                />
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Stats Row */}
+                    <div className={styles.statsRow}>
+                        {stats.map((stat, idx) => (
+                            <div key={idx} className={styles.statItem}>
+                                <span className={styles.statNumber}>{stat.number}</span>
+                                <span className={styles.statLabel}>{stat.label}</span>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Text Link */}
+                    <div className={styles.linkWrapper}>
+                        <Link href="/clients" className={styles.textLink}>
+                            See our client success stories →
+                        </Link>
+                    </div>
+                </div>
+            </section>
+        );
+    }
+
+    // Marquee variant
     if (variant === 'marquee') {
-        const marqueeClients = [...displayedClients, ...displayedClients]; // Duplicate for infinite scroll
+        const marqueeClients = [...displayedClients, ...displayedClients];
 
         return (
             <section className={styles.marqueeSection} id="clients">
-                {/* No container class here to allow full width liquid feel if desired, 
-                   but keeping it contained slightly or full width depends on design. 
-                   User said "Continuous horizontal scrolling logo strip". 
-                   Let's keep it full width or container based on parent. 
-                   Usually container is safer for alignment, but marquee often spans full width.
-                   Let's use container for the header, but maybe full width for the track?
-                   Let's stick to container for now to match other sections, 
-                   or just the track inside container. 
-                */}
                 <div className="container">
                     <div className={styles.header} style={{ marginBottom: '2rem' }}>
                         <span className={styles.subtitle}>Our Clients</span>
@@ -97,6 +148,7 @@ export default function ClientWall({
         );
     }
 
+    // Default grid variant (clients page)
     return (
         <section className={styles.section} id="clients">
             <div className="container">
@@ -108,7 +160,6 @@ export default function ClientWall({
                     </p>
                 </div>
 
-                {/* Search & Filter */}
                 {showSearch && (
                     <div className={styles.searchWrapper}>
                         <svg
@@ -133,7 +184,6 @@ export default function ClientWall({
                     </div>
                 )}
 
-                {/* Tabs */}
                 {showTabs && (
                     <div className={styles.tabs}>
                         <button
@@ -151,7 +201,6 @@ export default function ClientWall({
                     </div>
                 )}
 
-                {/* Grid */}
                 <div className={styles.grid}>
                     {displayedClients.map((client, idx) => (
                         <div key={`${client.name}-${idx}`} className={styles.card} title={client.name}>
@@ -181,16 +230,10 @@ export default function ClientWall({
                 )}
 
                 <div className={styles.footer}>
-                    {isHomePage ? (
-                        <Link href="/clients" className="btn btn-secondary">
-                            View All 100+ Clients
-                        </Link>
-                    ) : (
-                        hasMore && (
-                            <button onClick={handleLoadMore} className={styles.loadMoreBtn}>
-                                Show More Clients
-                            </button>
-                        )
+                    {hasMore && (
+                        <button onClick={handleLoadMore} className={styles.loadMoreBtn}>
+                            Show More Clients
+                        </button>
                     )}
                 </div>
             </div>

@@ -4,16 +4,22 @@ import styles from './Footer.module.css';
 
 const footerLinks = {
     services: [
-        { label: 'LLP Registration', href: '/services#registration' },
-        { label: 'GST Filing', href: '/services#tax' },
-        { label: 'Startup India', href: '/services#registration' },
-        { label: 'ISO Certification', href: '/services#certifications' },
-        { label: 'Trademark', href: '/services#legal' },
+        { label: 'Start a Company', href: '/services#start' },
+        { label: 'GST & Tax Help', href: '/services#tax' },
+        { label: 'Trademark', href: '/services#protect' },
+        { label: 'Compliance', href: '/services#compliance' },
+        { label: 'View All Services', href: '/services' },
+    ],
+    resources: [
+        { label: 'Free Health Check', href: '/health-check' },
+        { label: 'Startup Bundle', href: '/startup-bundle' },
+        { label: 'Learning Center', href: '/learn' },
+        { label: 'Free Tools', href: '/tools' },
+        { label: 'Blog', href: '/blog' },
     ],
     company: [
         { label: 'About Us', href: '/about' },
         { label: 'Careers', href: '/careers' },
-        { label: 'Blog', href: '/blog' },
         { label: 'Contact', href: '/contact' },
     ],
     legal: [
@@ -38,7 +44,7 @@ export default function Footer() {
                             />
                         </Link>
                         <p className={styles.tagline}>
-                            We handle compliance, so you can focus on growth.
+                            We handle the paperwork so you can focus on building something amazing.
                         </p>
                         <div className={styles.badges}>
                             <span className="badge badge-success">
@@ -50,7 +56,7 @@ export default function Footer() {
                             </span>
                             <span className="badge badge-blue">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" />
+                                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2" />
                                 </svg>
                                 4.9/5 Rating
                             </span>
@@ -70,6 +76,17 @@ export default function Footer() {
                         </div>
 
                         <div className={styles.linkColumn}>
+                            <h4>Free Resources</h4>
+                            <ul>
+                                {footerLinks.resources.map((link) => (
+                                    <li key={link.href}>
+                                        <Link href={link.href}>{link.label}</Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div className={styles.linkColumn}>
                             <h4>Company</h4>
                             <ul>
                                 {footerLinks.company.map((link) => (
@@ -81,18 +98,7 @@ export default function Footer() {
                         </div>
 
                         <div className={styles.linkColumn}>
-                            <h4>Legal</h4>
-                            <ul>
-                                {footerLinks.legal.map((link) => (
-                                    <li key={link.href}>
-                                        <Link href={link.href}>{link.label}</Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        <div className={styles.linkColumn}>
-                            <h4>Contact</h4>
+                            <h4>Contact Us</h4>
                             <ul>
                                 <li>
                                     <a href="mailto:info@pelagoconsultants.com">
@@ -102,7 +108,12 @@ export default function Footer() {
                                 <li>
                                     <a href="tel:+917994659991">+91 79946 59991</a>
                                 </li>
-                                <li>First floor, HiLITE Business Park, Room 1103 B, phase1, Palazhi, Kozhikode, Kerala 673032</li>
+                                <li className={styles.address}>
+                                    First floor, HiLITE Business Park,<br />
+                                    Room 1103 B, Phase 1,<br />
+                                    Palazhi, Kozhikode,<br />
+                                    Kerala 673032
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -113,7 +124,7 @@ export default function Footer() {
                     <div className={styles.socialLinks}>
                         <a href="https://in.linkedin.com/company/pelago-consultants" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227.24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                             </svg>
                         </a>
                         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">

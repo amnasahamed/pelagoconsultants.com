@@ -1,181 +1,246 @@
+/* ================================
+   FOOTER - MODERN DESIGN
+   ================================ */
+
 .footer {
-    background: var(--gray-50);
-    border-top: 1px solid var(--gray-200);
-    padding: var(--space-16) 0 var(--space-8);
-    position: relative;
+  background: linear-gradient(180deg, var(--navy) 0%, #0a0f1d 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: var(--space-20) 0 var(--space-8);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(30, 58, 95, 0.4), transparent);
 }
 
 .footerContent {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-12);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  position: relative;
+  z-index: 1;
 }
 
 .footerMain {
-    display: grid;
-    grid-template-columns: 1.5fr 2fr;
-    gap: var(--space-12);
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  gap: var(--space-16);
 }
 
 .footerBrand {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
 }
 
 .logo img {
-    height: 45px;
-    width: auto;
+  height: 50px;
+  width: auto;
+  filter: brightness(1.2);
 }
 
 .tagline {
-    color: var(--gray-600);
-    font-size: var(--text-base);
-    line-height: 1.6;
-    max-width: 280px;
-    margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  max-width: 320px;
+  margin-bottom: 0;
 }
 
 .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
 }
 
 .footerLinks {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-8);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-8);
 }
 
 .linkColumn h4 {
-    font-size: var(--text-sm);
-    font-weight: 600;
-    color: var(--navy);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-6);
+  position: relative;
+  padding-bottom: var(--space-3);
+}
+
+.linkColumn h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), transparent);
+  border-radius: 2px;
 }
 
 .linkColumn ul {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
 }
 
 .linkColumn li {
-    font-size: var(--text-sm);
-    color: var(--gray-600);
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.6);
+  transition: all var(--transition-fast);
 }
 
 .linkColumn a {
-    color: var(--gray-600);
-    transition: color var(--transition-fast);
+  color: rgba(255, 255, 255, 0.6);
+  transition: all var(--transition-fast);
+  display: inline-block;
 }
 
 .linkColumn a:hover {
-    color: var(--blue);
+  color: var(--white);
+  transform: translateX(4px);
+}
+
+.linkColumn .address {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: var(--text-sm);
+  line-height: 1.8;
 }
 
 .footerBottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: var(--space-8);
-    border-top: 1px solid var(--gray-200);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-8);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footerBottom p {
-    color: var(--gray-500);
-    font-size: var(--text-sm);
-    margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: var(--text-sm);
+  margin-bottom: 0;
 }
 
 .socialLinks {
-    display: flex;
-    gap: var(--space-4);
+  display: flex;
+  gap: var(--space-3);
 }
 
 .socialLinks a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: var(--radius-full);
-    background: var(--white);
-    color: var(--gray-600);
-    transition: all var(--transition-fast);
-    border: 1px solid var(--gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.6);
+  transition: all var(--transition-fast);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .socialLinks a:hover {
-    background: var(--blue);
-    color: var(--white);
-    border-color: var(--blue);
-    transform: translateY(-2px);
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(30, 58, 95, 0.25);
 }
 
 /* WhatsApp Button */
 .whatsappBtn {
-    position: fixed;
-    bottom: var(--space-6);
-    right: var(--space-6);
-    width: 60px;
-    height: 60px;
-    background: #25D366;
-    color: var(--white);
-    border-radius: var(--radius-full);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: var(--shadow-lg);
-    transition: all var(--transition-base);
-    z-index: 999;
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: var(--white);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+  transition: all var(--transition-base);
+  z-index: 999;
+  animation: bounce-gentle 2s ease-in-out infinite;
 }
 
 .whatsappBtn:hover {
-    background: #128C7E;
-    transform: scale(1.1);
-    color: var(--white);
+  transform: scale(1.1);
+  box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
+  color: var(--white);
+}
+
+.whatsappBtn svg {
+  width: 32px;
+  height: 32px;
 }
 
 /* Mobile Styles */
 @media (max-width: 1024px) {
-    .footerMain {
-        grid-template-columns: 1fr;
-        gap: var(--space-8);
-    }
+  .footerMain {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
 
-    .footerLinks {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .footerLinks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .whatsappBtn {
+    bottom: 80px;
+  }
 }
 
 @media (max-width: 640px) {
-    .footer {
-        padding: var(--space-12) 0 var(--space-6);
-    }
+  .footer {
+    padding: var(--space-16) 0 var(--space-6);
+  }
 
-    .footerLinks {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-8) var(--space-4);
-    }
+  .footerLinks {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8) var(--space-4);
+  }
 
-    .linkColumn:last-child {
-        grid-column: span 2;
-    }
+  .linkColumn:last-child {
+    grid-column: span 2;
+  }
 
-    .footerBottom {
-        flex-direction: column;
-        gap: var(--space-4);
-        text-align: center;
-    }
+  .footerBottom {
+    flex-direction: column;
+    gap: var(--space-4);
+    text-align: center;
+  }
 
-    .whatsappBtn {
-        bottom: var(--space-4);
-        right: var(--space-4);
-        width: 48px;
-        height: 48px;
-    }
+  .whatsappBtn {
+    bottom: 80px;
+    right: var(--space-4);
+    width: 56px;
+    height: 56px;
+  }
+
+  .whatsappBtn svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }

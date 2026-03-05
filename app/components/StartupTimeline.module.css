@@ -1,0 +1,236 @@
+/* =========================================
+   STARTUP TIMELINE - Clean Vertical Journey
+   ========================================= */
+
+.section {
+    padding: 120px 0;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    position: relative;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.header p {
+    font-size: 1.125rem;
+    color: #64748b;
+    margin: 0;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Timeline Container */
+.timeline {
+    max-width: 800px;
+    margin: 0 auto 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* Step */
+.step {
+    display: flex;
+    gap: 24px;
+    position: relative;
+}
+
+/* Step Indicator (Left Side) */
+.stepIndicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 48px;
+    flex-shrink: 0;
+}
+
+.stepCircle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #1e3a8a;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
+}
+
+.stepLine {
+    width: 2px;
+    background: #e2e8f0;
+    flex-grow: 1;
+    min-height: 60px;
+    margin: 8px 0;
+    position: relative;
+}
+
+/* Step Card */
+.stepCard {
+    flex: 1;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 24px;
+    transition: all 0.3s ease;
+}
+
+.stepCard:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+}
+
+.stepCard h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0 0 8px 0;
+}
+
+.stepCard p {
+    font-size: 1rem;
+    color: #64748b;
+    margin: 0 0 16px 0;
+    line-height: 1.5;
+}
+
+/* Feature List */
+.featureList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.featureList li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.875rem;
+    color: #475569;
+}
+
+.featureList li svg {
+    flex-shrink: 0;
+}
+
+/* CTA Section */
+.timelineCta {
+    text-align: center;
+}
+
+.ctaButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 32px;
+    background: #1e3a8a;
+    color: white;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+    background: #1e40af;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(30, 58, 138, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .section {
+        padding: 80px 0;
+    }
+
+    .header h2 {
+        font-size: 1.875rem;
+    }
+
+    .header p {
+        font-size: 1rem;
+    }
+
+    .step {
+        gap: 16px;
+    }
+
+    .stepIndicator {
+        width: 40px;
+    }
+
+    .stepCircle {
+        width: 40px;
+        height: 40px;
+        font-size: 0.75rem;
+    }
+
+    .stepCard {
+        padding: 20px;
+        margin-bottom: 16px;
+    }
+
+    .stepCard h3 {
+        font-size: 1.125rem;
+    }
+
+    .stepCard p {
+        font-size: 0.9375rem;
+    }
+
+    .ctaButton {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 60px 0;
+    }
+
+    .header h2 {
+        font-size: 1.5rem;
+    }
+
+    .stepCard {
+        padding: 16px;
+    }
+
+    .featureList li {
+        font-size: 0.8125rem;
+    }
+}

@@ -25,7 +25,7 @@
     right: 0;
     width: 50%;
     height: 100%;
-    background: radial-gradient(circle at 70% 30%, rgba(67, 97, 238, 0.3) 0%, transparent 50%);
+    background: radial-gradient(circle at 70% 30%, rgba(30, 58, 95, 0.3) 0%, transparent 50%);
 }
 
 .heroGrid {
@@ -600,7 +600,7 @@
 }
 
 .sidebarDot.intro {
-    background: var(--blue);
+    background: var(--primary);
 }
 
 .sidebarDot.main {
@@ -722,9 +722,9 @@
 }
 
 .articleBody a {
-    color: var(--blue);
+    color: var(--primary);
     text-decoration: none;
-    border-bottom: 1px dashed var(--blue);
+    border-bottom: 1px dashed var(--primary);
 }
 
 .articleBody a:hover {
@@ -741,8 +741,8 @@
 }
 
 .articleBody :global(.structure-card.highlight) {
-    background: linear-gradient(135deg, rgba(67, 97, 238, 0.05), rgba(139, 92, 246, 0.05));
-    border-left-color: var(--blue);
+    background: linear-gradient(135deg, rgba(30, 58, 95, 0.04), rgba(51, 65, 85, 0.04));
+    border-left-color: var(--primary);
 }
 
 .articleBody :global(.structure-card h3) {
@@ -810,14 +810,14 @@
 }
 
 .articleBody :global(.great) {
-    color: var(--blue);
+    color: var(--primary);
     font-weight: 600;
 }
 
 /* Recommendation Box */
 .articleBody :global(.recommendation-box) {
-    background: linear-gradient(135deg, rgba(67, 97, 238, 0.08), rgba(139, 92, 246, 0.08));
-    border-left: 4px solid var(--blue);
+    background: linear-gradient(135deg, rgba(30, 58, 95, 0.06), rgba(51, 65, 85, 0.06));
+    border-left: 4px solid var(--primary);
     padding: var(--space-5);
     margin: var(--space-4) 0;
     border-radius: 0 var(--radius-lg) var(--radius-lg) 0;

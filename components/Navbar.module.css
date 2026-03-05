@@ -1,145 +1,202 @@
+/* ================================
+   NAVBAR - GLASSMORPHISM DESIGN
+   ================================ */
+
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    padding: var(--space-4) 0;
-    transition: all var(--transition-base);
-    background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all var(--transition-base);
+  background: transparent;
 }
 
-.header.scrolled {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: var(--shadow-md);
-    padding: var(--space-3) 0;
+.scrolled {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  padding: 0 var(--space-6);
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    z-index: 1001;
+  display: flex;
+  align-items: center;
+  transition: transform var(--transition-fast);
+}
+
+.logo:hover {
+  transform: scale(1.02);
 }
 
 .logo img {
-    height: 45px;
-    width: auto;
+  height: 45px;
+  width: auto;
+  transition: filter var(--transition-fast);
 }
 
 .navLinks {
-    display: flex;
-    align-items: center;
-    gap: var(--space-8);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .navLink {
-    font-size: var(--text-base);
-    font-weight: 500;
-    color: var(--navy);
-    position: relative;
-    padding: var(--space-2) 0;
+  display: block;
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--gray-600);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-fast);
+  position: relative;
 }
 
 .navLink::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--blue);
-    transition: width var(--transition-base);
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width var(--transition-fast);
+  border-radius: 2px;
 }
 
 .navLink:hover {
-    color: var(--blue);
+  color: var(--primary);
+  background: rgba(30, 58, 95, 0.04);
 }
 
 .navLink:hover::after {
-    width: 100%;
+  width: 20px;
 }
 
 .ctaButton {
-    margin-left: var(--space-4);
+  box-shadow: 0 4px 14px rgba(30, 58, 95, 0.25);
+}
+
+.ctaButton:hover {
+  box-shadow: 0 6px 20px rgba(30, 58, 95, 0.3);
 }
 
 .mobileCtaItem {
-    display: none;
+  display: none;
 }
 
+/* Mobile Menu Button */
 .mobileMenuBtn {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    padding: var(--space-2);
-    z-index: 1001;
-    background: transparent;
-    border: none;
-    cursor: pointer;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: var(--space-2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
 }
 
 .mobileMenuBtn span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--navy);
-    transition: all var(--transition-base);
-    border-radius: 2px;
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--navy);
+  border-radius: 2px;
+  transition: all var(--transition-base);
+  transform-origin: center;
 }
 
 .mobileMenuBtn.open span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+  transform: translateY(7px) rotate(45deg);
 }
 
 .mobileMenuBtn.open span:nth-child(2) {
-    opacity: 0;
+  opacity: 0;
 }
 
 .mobileMenuBtn.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* Mobile Styles */
-@media (max-width: 900px) {
-    .navLinks {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%;
-        height: 100vh;
-        background: var(--white);
-        flex-direction: column;
-        justify-content: center;
-        gap: var(--space-6);
-        transition: right var(--transition-base);
-        padding: var(--space-8);
-    }
+@media (max-width: 1024px) {
+  .navLinks {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 400px;
+    height: 100vh;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+    padding: calc(80px + var(--space-6)) var(--space-6) var(--space-6);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
+    transition: right var(--transition-slow);
+    z-index: 999;
+  }
 
-    .navLinks.open {
-        right: 0;
-    }
+  .navLinks.open {
+    right: 0;
+  }
 
-    .navLink {
-        font-size: var(--text-xl);
-    }
+  .navLink {
+    width: 100%;
+    padding: var(--space-4);
+    font-size: var(--text-lg);
+    border-radius: var(--radius-xl);
+  }
 
-    .ctaButton {
-        display: none;
-    }
+  .navLink:hover {
+    background: var(--primary-50);
+  }
 
-    .mobileCtaItem {
-        display: block;
-        margin-top: var(--space-4);
-    }
+  .ctaButton {
+    display: none;
+  }
 
-    .mobileMenuBtn {
-        display: flex;
-    }
+  .mobileCtaItem {
+    display: block;
+    width: 100%;
+    margin-top: var(--space-4);
+  }
+
+  .mobileCtaItem :global(.btn) {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .mobileMenuBtn {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    height: 70px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
 }

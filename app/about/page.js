@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export const metadata = {
     title: 'About Us - Pelago Consultants',
-    description: 'Learn about Pelago Consultants - Startup India certified business compliance firm with 6,000+ happy clients and 98% success rate.',
+    description: 'Meet the team behind Pelago Consultants. We\'re a group of founders, operators, and compliance experts who believe starting a business should be exciting, not exhausting.',
 };
 
 // SVG Icons
@@ -15,28 +15,30 @@ const icons = {
     mission: <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg>,
     vision: <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>,
     check: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>,
+    heart: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg>,
+    rocket: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" /><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" /></svg>,
 };
 
 const values = [
     {
-        title: 'Client-First Approach',
-        description: 'Your success is our priority. We tailor solutions to your unique business needs.',
-        icon: icons.clientFirst,
+        title: 'Founders First',
+        description: 'We\'ve been in your shoes. Every decision we make starts with: "What\'s best for the founder?"',
+        icon: icons.heart,
     },
     {
-        title: 'Transparency',
-        description: 'No hidden fees, no surprises. Clear communication at every step.',
+        title: 'No Jargon, Ever',
+        description: 'We explain things in plain English (or Malayalam!). If you don\'t understand something, that\'s on us, not you.',
         icon: icons.transparency,
     },
     {
-        title: 'Expertise',
-        description: 'Certified professionals with years of experience in compliance and legal matters.',
+        title: 'Real Expertise',
+        description: 'Our team includes CAs, CSs, and lawyers who actually know their stuff — not just salespeople.',
         icon: icons.expertise,
     },
     {
-        title: 'Innovation',
-        description: 'Leveraging technology to streamline your compliance journey.',
-        icon: icons.innovation,
+        title: 'Always Innovating',
+        description: 'We\'re constantly finding ways to make compliance faster, easier, and less painful for you.',
+        icon: icons.rocket,
     },
 ];
 
@@ -51,43 +53,48 @@ const team = [
         name: 'Minhaj',
         role: 'Chief Executive Officer',
         image: '/team-minhaj.png',
-        color: '#22c55e'
+        color: '#22c55e',
+        bio: 'Former consultant turned founder. Believes every business deserves great compliance support.'
     },
     {
         name: 'Sahil',
         role: 'Chief Financial Officer',
         image: '/team-sahil.png',
-        color: '#ec4899'
+        color: '#059669',
+        bio: 'CA with 10+ years experience. Makes complex tax stuff feel surprisingly simple.'
     },
     {
         name: 'Nandhan',
         role: 'Chief Operations Officer',
         image: '/team-nandhan.png',
-        color: '#8b5cf6'
+        color: '#334155',
+        bio: 'Operations wizard who ensures everything runs smoothly behind the scenes.'
     },
     {
         name: 'Amnas Ahammed',
         role: 'Chief Technology Officer',
         image: '/team-amnas.png',
-        color: '#4361ee'
+        color: '#4361ee',
+        bio: 'Tech enthusiast building tools to make compliance effortless for founders.'
     },
     {
         name: 'Salim',
         role: 'Chief Compliance Officer',
         image: '/team-salim.png',
-        color: '#f59e0b'
+        color: '#f59e0b',
+        bio: 'Legal expert who knows every government form so you don\'t have to.'
     }
 ];
 
 const staff = [
     { name: 'Deeksha', role: 'Business Associate', image: '/staff/deeksha.jpg', color: '#22c55e' },
-    { name: 'Farshana', role: 'Compliance Executive', image: '/staff/farshana.jpg', color: '#ec4899' },
-    { name: 'Jazil', role: 'Business Associate', image: '/staff/jazil.jpg', color: '#8b5cf6' },
+    { name: 'Farshana', role: 'Compliance Executive', image: '/staff/farshana.jpg', color: '#059669' },
+    { name: 'Jazil', role: 'Business Associate', image: '/staff/jazil.jpg', color: '#334155' },
     { name: 'Kochu', role: 'Compliance Executive', image: '/staff/kochu.jpg', color: '#4361ee' },
     { name: 'Lena', role: 'Business Associate', image: '/staff/lena.jpg', color: '#f59e0b' },
     { name: 'Lubna', role: 'Compliance Executive', image: '/staff/lubna.jpg', color: '#22c55e' },
-    { name: 'Maneesha', role: 'Business Associate', image: '/staff/maneesha.jpg', color: '#ec4899' },
-    { name: 'Naja', role: 'Compliance Executive', image: '/staff/naja.jpg', color: '#8b5cf6' },
+    { name: 'Maneesha', role: 'Business Associate', image: '/staff/maneesha.jpg', color: '#0891b2' },
+    { name: 'Naja', role: 'Compliance Executive', image: '/staff/naja.jpg', color: '#475569' },
     { name: 'Raniya', role: 'Business Associate', image: '/staff/raniya.jpg', color: '#4361ee' },
     { name: 'Sameera', role: 'Compliance Executive', image: '/staff/sameera.jpg', color: '#f59e0b' },
     { name: 'Shehin', role: 'Business Associate', image: '/staff/shehin.jpg', color: '#22c55e' },
@@ -101,8 +108,8 @@ export default function AboutPage() {
                 <div className="container">
                     <div className={styles.heroContent}>
                         <span className="badge badge-blue">About Us</span>
-                        <h1>Building trust through<br /><span className={styles.highlight}>transparent compliance</span></h1>
-                        <p>Since our inception, we&apos;ve helped 6,000+ businesses navigate the complex world of compliance, registration, and legal requirements.</p>
+                        <h1>We&apos;re founders helping<br /><span className={styles.highlight}>other founders succeed</span></h1>
+                        <p>Pelago started with a simple frustration: starting a business in India is way harder than it should be. So we decided to fix that.</p>
                     </div>
                 </div>
             </section>
@@ -114,23 +121,23 @@ export default function AboutPage() {
                         <div className={styles.storyContent}>
                             <h2>Our Story</h2>
                             <p>
-                                Pelago Consultants was founded with a simple mission: to make business compliance accessible and affordable for every entrepreneur in India.
+                                Back in 2019, we were a group of founders who had just started our own businesses. We quickly realized that the hardest part wasn&apos;t building the product or finding customers — it was the paperwork.
                             </p>
                             <p>
-                                We understand that navigating government regulations, tax filings, and legal requirements can be overwhelming — especially for startups and small businesses. That&apos;s why we&apos;ve built a team of experts who handle the paperwork while you focus on what matters most: growing your business.
+                                Government portals that crash. Forms that make no sense. Consultants who speak in riddles and charge hidden fees. We thought: <em>there has to be a better way.</em>
                             </p>
                             <p>
-                                Today, we&apos;re proud to be a Startup India certified consultancy, trusted by businesses across Kerala and beyond.
+                                So we built it. Pelago was born from the simple idea that compliance should be easy, transparent, and maybe even pleasant. Today, we&apos;ve helped over 6,000 founders start and grow their businesses — and we&apos;re just getting started.
                             </p>
                         </div>
                         <div className={styles.storyImage}>
                             <div className={styles.imagePlaceholder}>
                                 <Image
-                                    src="/logo.png"
-                                    alt="Pelago Team"
-                                    width={200}
-                                    height={100}
-                                    style={{ objectFit: 'contain' }}
+                                    src="/office/office-1.jpg"
+                                    alt="The Pelago Team"
+                                    width={500}
+                                    height={350}
+                                    style={{ objectFit: 'cover', borderRadius: '16px' }}
                                 />
                             </div>
                         </div>
@@ -145,23 +152,43 @@ export default function AboutPage() {
                         <div className={styles.missionCard}>
                             <span className={styles.missionIcon}>{icons.mission}</span>
                             <h3>Our Mission</h3>
-                            <p>To simplify compliance for every business, enabling entrepreneurs to focus on growth while we handle the formalities.</p>
+                            <p>To make business compliance so simple that founders can focus on what they do best — building great companies.</p>
                         </div>
                         <div className={styles.missionCard}>
                             <span className={styles.missionIcon}>{icons.vision}</span>
                             <h3>Our Vision</h3>
-                            <p>To be India&apos;s most trusted partner for business compliance, known for transparency, expertise, and exceptional service.</p>
+                            <p>A world where starting a business is as easy as downloading an app. Where every entrepreneur has access to expert help.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Team */}
-            <section className={`section ${styles.teamSection}`}>
+            {/* Values */}
+            <section className={`section ${styles.valuesSection}`}>
                 <div className="container">
                     <div className="section-header">
-                        <p className="subtitle">Core Team</p>
-                        <h2>The experts behind your success</h2>
+                        <p className="subtitle">What We Believe</p>
+                        <h2>The principles that guide us</h2>
+                    </div>
+                    <div className={styles.valuesGrid}>
+                        {values.map((value, idx) => (
+                            <div key={idx} className={styles.valueCard}>
+                                <span className={styles.valueIcon}>{value.icon}</span>
+                                <h3>{value.title}</h3>
+                                <p>{value.description}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Team */}
+            <section className={`section bg-gray ${styles.teamSection}`}>
+                <div className="container">
+                    <div className="section-header">
+                        <p className="subtitle">Meet The Team</p>
+                        <h2>The people behind Pelago</h2>
+                        <p>A mix of operators, accountants, lawyers, and dreamers who believe in your success.</p>
                     </div>
                     <div className={styles.teamGrid}>
                         {team.map((member, idx) => (
@@ -178,15 +205,16 @@ export default function AboutPage() {
                                 </div>
                                 <div className={styles.teamInfo}>
                                     <h3>{member.name}</h3>
-                                    <p>{member.role}</p>
+                                    <p className={styles.role}>{member.role}</p>
+                                    <p className={styles.bio}>{member.bio}</p>
                                 </div>
                             </div>
                         ))}
                     </div>
 
                     <div className={styles.staffHeader}>
-                        <p className="subtitle">Our Dedicated Team</p>
-                        <h3>The strength of our operations</h3>
+                        <p className="subtitle">Our Extended Family</p>
+                        <h3>The amazing people who make it all happen</h3>
                     </div>
                     <div className={styles.staffGrid}>
                         {staff.map((member, idx) => (
@@ -211,31 +239,12 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Values */}
-            <section className={`section ${styles.valuesSection}`}>
-                <div className="container">
-                    <div className="section-header">
-                        <p className="subtitle">Our Values</p>
-                        <h2>What drives us every day</h2>
-                    </div>
-                    <div className={styles.valuesGrid}>
-                        {values.map((value, idx) => (
-                            <div key={idx} className={styles.valueCard}>
-                                <span className={styles.valueIcon}>{value.icon}</span>
-                                <h3>{value.title}</h3>
-                                <p>{value.description}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             {/* Certifications */}
-            <section className={`section bg-gray ${styles.certSection}`}>
+            <section className={`section ${styles.certSection}`}>
                 <div className="container">
                     <div className="section-header">
-                        <p className="subtitle">Certifications</p>
-                        <h2>Government recognized & certified</h2>
+                        <p className="subtitle">Trusted & Certified</p>
+                        <h2>Government recognized & verified</h2>
                     </div>
                     <div className={styles.certGrid}>
                         {certifications.map((cert, idx) => (
@@ -265,24 +274,24 @@ export default function AboutPage() {
             </section>
 
             {/* Stats */}
-            <section className={`section ${styles.statsSection}`}>
+            <section className={`section bg-gray ${styles.statsSection}`}>
                 <div className="container">
                     <div className={styles.statsGrid}>
                         <div className={styles.statItem}>
                             <span className={styles.statNumber}>6,000+</span>
-                            <span className={styles.statLabel}>Happy Clients</span>
+                            <span className={styles.statLabel}>Founders Helped</span>
                         </div>
                         <div className={styles.statItem}>
                             <span className={styles.statNumber}>150+</span>
-                            <span className={styles.statLabel}>Companies Formed</span>
+                            <span className={styles.statLabel}>Companies Started</span>
                         </div>
                         <div className={styles.statItem}>
                             <span className={styles.statNumber}>4.9/5</span>
-                            <span className={styles.statLabel}>Google Rating</span>
+                            <span className={styles.statLabel}>Happy Clients</span>
                         </div>
                         <div className={styles.statItem}>
-                            <span className={styles.statNumber}>98%</span>
-                            <span className={styles.statLabel}>Success Rate</span>
+                            <span className={styles.statNumber}>15+</span>
+                            <span className={styles.statLabel}>Team Members</span>
                         </div>
                     </div>
                 </div>
@@ -292,12 +301,12 @@ export default function AboutPage() {
             <section className={`section ${styles.gallerySection}`}>
                 <div className="container">
                     <div className="section-header">
-                        <p className="subtitle">Our Space</p>
-                        <h2>Where the magic happens</h2>
-                        <p>Take a peek inside our office at HiLite Business Park, Calicut</p>
+                        <p className="subtitle">Our Home</p>
+                        <h2>Where we work (and occasionally play)</h2>
+                        <p>Our office at HiLite Business Park, Calicut — come visit us!</p>
                     </div>
                     <div className={styles.galleryGrid}>
-                        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((num) => (
+                        {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
                             <div key={num} className={styles.galleryItem}>
                                 <Image
                                     src={`/office/office-${num}.jpg`}
@@ -308,6 +317,29 @@ export default function AboutPage() {
                                 />
                             </div>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* CTA */}
+            <section className={styles.ctaSection}>
+                <div className="container">
+                    <div className={styles.ctaContent}>
+                        <h2>Ready to meet us?</h2>
+                        <p>We&apos;d love to hear about your business and how we can help.</p>
+                        <div className={styles.ctaButtons}>
+                            <a 
+                                href="https://api.whatsapp.com/send/?phone=917994659991&text=Hi%2C+I+want+to+know+more+about+Pelago"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-outline btn-lg"
+                            >
+                                Message Us on WhatsApp
+                            </a>
+                            <a href="/contact" className="btn btn-primary btn-lg">
+                                Book a Free Call
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
