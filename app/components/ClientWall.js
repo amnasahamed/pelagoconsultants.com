@@ -19,7 +19,8 @@ export default function ClientWall({
     showSearch = true,
     showTabs = true,
     isHomePage = false,
-    variant = 'grid'
+    variant = 'grid',
+    hideHeader = false
 }) {
     const [searchTerm, setSearchTerm] = useState('');
     const [visibleCount, setVisibleCount] = useState(initialCount);
@@ -150,15 +151,17 @@ export default function ClientWall({
 
     // Default grid variant (clients page)
     return (
-        <section className={styles.section} id="clients">
+        <section className={styles.section} id="clients" style={hideHeader ? { paddingTop: 0, backgroundColor: 'transparent' } : {}}>
             <div className="container">
-                <div className={styles.header}>
-                    <span className={styles.subtitle}>Our Clients</span>
-                    <h2 className={styles.title}>Trusted by 100+ Innovative Companies</h2>
-                    <p className={styles.description}>
-                        From ambitious startups to established enterprises, we help businesses across industries manage their compliance and growth.
-                    </p>
-                </div>
+                {!hideHeader && (
+                    <div className={styles.header}>
+                        <span className={styles.subtitle}>Our Clients</span>
+                        <h2 className={styles.title}>Trusted by 100+ Innovative Companies</h2>
+                        <p className={styles.description}>
+                            From ambitious startups to established enterprises, we help businesses across industries manage their compliance and growth.
+                        </p>
+                    </div>
+                )}
 
                 {showSearch && (
                     <div className={styles.searchWrapper}>
